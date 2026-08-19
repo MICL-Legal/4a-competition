@@ -13,14 +13,14 @@ html{scroll-behavior:smooth}
 body{
   margin:0; background:var(--bg); color:var(--ink);
   font-family:"Noto Sans TC",sans-serif; font-weight:400;
-  font-size:16.5px; line-height:1.85; -webkit-font-smoothing:antialiased;
+  font-size:17px; line-height:1.85; -webkit-font-smoothing:antialiased;
 }
 .num{font-variant-numeric:tabular-nums; letter-spacing:-.01em}
 .cz{font-family:"Cinzel",serif}
 
 nav{position:sticky; top:0; z-index:9; background:rgba(248,242,230,.94); backdrop-filter:blur(8px); border-bottom:1px solid var(--line)}
 nav .in{max-width:56rem; margin:0 auto; padding:.75rem 1.5rem; display:flex; gap:1.5rem; overflow-x:auto}
-nav a{color:var(--faint); text-decoration:none; font-size:.8rem; white-space:nowrap; letter-spacing:.05em}
+nav a{color:var(--faint); text-decoration:none; font-size:0.904rem; white-space:nowrap; letter-spacing:.05em}
 nav a:hover{color:var(--ember)}
 
 .wrap{max-width:56rem; margin:0 auto; padding:0 1.5rem 6rem}
@@ -29,7 +29,7 @@ nav a:hover{color:var(--ember)}
 .hero::before{content:""; position:absolute; right:-10%; top:-40%; width:52%; height:130%;
   background:radial-gradient(closest-side, rgba(176,52,28,.11), rgba(150,114,29,.06) 55%, transparent 76%); pointer-events:none}
 .hero>*{position:relative}
-.kicker{font-family:"Cinzel",serif; font-size:.8rem; letter-spacing:.3em; color:var(--gold); margin:0 0 1.8rem; font-weight:700}
+.kicker{font-family:"Cinzel",serif; font-size:0.904rem; letter-spacing:.3em; color:var(--gold); margin:0 0 1.8rem; font-weight:700}
 .lockup{font-family:"Cinzel",serif; font-weight:900; font-size:clamp(2rem,5.6vw,3.5rem); line-height:1.1; letter-spacing:.03em; margin:0 0 .5rem; color:var(--ink)}
 .lockup .p{color:var(--faint); display:block; font-size:.5em; letter-spacing:.26em; font-weight:500; margin-bottom:.55rem}
 .lockup .r{color:var(--ember)}
@@ -37,36 +37,36 @@ h1{font-family:"Noto Serif TC",serif; font-size:clamp(1.5rem,3.4vw,2.1rem); font
 h1 small{display:block; font-size:.6em; font-weight:400; color:var(--dim); margin-top:.5rem; line-height:1.7}
 .idea{font-family:"Noto Serif TC",serif; font-size:clamp(1.1rem,2.3vw,1.38rem); font-weight:400; line-height:1.75; margin:0 0 1rem; max-width:29em; border-left:2px solid var(--ember); padding-left:1.2rem}
 .idea b{color:var(--ember); font-weight:600}
-.sub{margin:0; color:var(--dim); font-size:.92rem; font-weight:300}
+.sub{margin:0; color:var(--dim); font-size:1.04rem; font-weight:300}
 
 .tiles{display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--line); margin-top:2.8rem}
 .tile{padding:1.4rem 1.2rem 1.2rem; border-right:1px solid var(--line)}
 .tile:last-child{border-right:none}
-.tile .k{font-family:"Cinzel",serif; font-size:.72rem; letter-spacing:.18em; color:var(--faint); display:block; margin-bottom:.5rem}
+.tile .k{font-family:"Cinzel",serif; font-size:0.814rem; letter-spacing:.18em; color:var(--faint); display:block; margin-bottom:.5rem}
 .tile .v{font-family:"Noto Serif TC",serif; font-size:2.25rem; font-weight:900; line-height:1; color:var(--ember); display:block}
-.tile .s{font-size:.76rem; color:var(--dim); display:block; margin-top:.5rem; font-weight:300; line-height:1.6}
+.tile .s{font-size:0.859rem; color:var(--dim); display:block; margin-top:.5rem; font-weight:300; line-height:1.6}
 @media(max-width:720px){.tiles{grid-template-columns:repeat(2,1fr)} .tile{border-bottom:1px solid var(--line)}}
 
 .saga{margin-top:2.8rem; border:1px solid var(--line); background:var(--surf); padding:2rem 1.6rem}
-.saga h3{font-family:"Cinzel",serif; font-size:1rem; letter-spacing:.16em; margin:0 0 1.4rem; color:var(--ember); font-weight:700}
+.saga h3{font-family:"Cinzel",serif; font-size:1.13rem; letter-spacing:.16em; margin:0 0 1.4rem; color:var(--ember); font-weight:700}
 .years{display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--line)}
 .yr{padding:1.15rem 1.1rem; border-right:1px solid var(--line); border-bottom:1px solid var(--line)}
 .yr:nth-child(3){border-right:none}
 .yr .y{font-family:"Noto Serif TC",serif; font-size:1.45rem; font-weight:900; color:var(--faint); display:block}
-.yr .t{font-family:"Noto Serif TC",serif; font-weight:900; display:block; margin:.3rem 0 .25rem; font-size:1.02rem}
-.yr .d{font-size:.79rem; color:var(--dim); font-weight:300; line-height:1.7}
+.yr .t{font-family:"Noto Serif TC",serif; font-weight:900; display:block; margin:.3rem 0 .25rem; font-size:1.153rem}
+.yr .d{font-size:0.893rem; color:var(--dim); font-weight:300; line-height:1.7}
 .yr.now{background:var(--surf2); box-shadow:inset 0 3px 0 var(--ember)}
 .yr.now .y{color:var(--ember)}
 @media(max-width:720px){.years{grid-template-columns:1fr} .yr{border-right:none}}
-.saga p{margin:1.3rem 0 0; font-size:.93rem; color:var(--dim); font-weight:300; max-width:44em}
+.saga p{margin:1.3rem 0 0; font-size:1.051rem; color:var(--dim); font-weight:300; max-width:44em}
 .saga p b{color:var(--ink); font-weight:700}
 
 section{padding:3.6rem 0 0}
 .head{margin-bottom:1.7rem}
 .ord{display:none}
 h2{font-family:"Noto Serif TC",serif; font-size:clamp(1.5rem,3.1vw,2rem); font-weight:900; line-height:1.38; margin:0; letter-spacing:-.015em}
-h2 span{display:block; font-family:"Cinzel",serif; font-size:.78rem; letter-spacing:.26em; color:var(--gold); font-weight:700; margin-bottom:.55rem}
-.say{font-size:1rem; color:var(--ink); max-width:40em; margin:1.3rem 0 0; font-weight:300}
+h2 span{display:block; font-family:"Cinzel",serif; font-size:0.881rem; letter-spacing:.26em; color:var(--gold); font-weight:700; margin-bottom:.55rem}
+.say{font-size:1.13rem; color:var(--ink); max-width:40em; margin:1.3rem 0 0; font-weight:300}
 .say b{font-weight:700; color:var(--ember)}
 
 .grid{display:grid; border-top:1px solid var(--line)}
@@ -75,29 +75,29 @@ h2 span{display:block; font-family:"Cinzel",serif; font-size:.78rem; letter-spac
 .cell{padding:1.4rem 1.3rem 1.5rem; border-right:1px solid var(--line); border-bottom:1px solid var(--line)}
 .g3 .cell:nth-child(3n),.g2 .cell:nth-child(2n){border-right:none}
 @media(max-width:720px){.cell{border-right:none}}
-.cell .tag{font-family:"Cinzel",serif; font-size:.74rem; letter-spacing:.14em; color:var(--faint); display:block; margin-bottom:.5rem}
-.cell .t{font-family:"Noto Serif TC",serif; font-size:1.14rem; font-weight:900; display:block; margin-bottom:.45rem}
-.cell .d{font-size:.87rem; color:var(--dim); font-weight:300; line-height:1.8}
+.cell .tag{font-family:"Cinzel",serif; font-size:0.836rem; letter-spacing:.14em; color:var(--faint); display:block; margin-bottom:.5rem}
+.cell .t{font-family:"Noto Serif TC",serif; font-size:1.288rem; font-weight:900; display:block; margin-bottom:.45rem}
+.cell .d{font-size:0.983rem; color:var(--dim); font-weight:300; line-height:1.8}
 
 .flow{display:grid; grid-template-columns:1fr auto 1fr auto 1fr; gap:.8rem; align-items:stretch}
 .fstep{background:var(--surf); padding:1.3rem 1.1rem; text-align:center}
 .fstep.end{background:var(--surf2); box-shadow:inset 0 3px 0 var(--ember)}
-.fstep .n{font-family:"Cinzel",serif; font-size:.74rem; letter-spacing:.14em; color:var(--ember); display:block; margin-bottom:.4rem}
-.fstep .t{font-family:"Noto Serif TC",serif; font-size:1.1rem; font-weight:900; display:block; margin-bottom:.35rem}
-.fstep .d{font-size:.79rem; color:var(--dim); font-weight:300; line-height:1.7}
+.fstep .n{font-family:"Cinzel",serif; font-size:0.836rem; letter-spacing:.14em; color:var(--ember); display:block; margin-bottom:.4rem}
+.fstep .t{font-family:"Noto Serif TC",serif; font-size:1.243rem; font-weight:900; display:block; margin-bottom:.35rem}
+.fstep .d{font-size:0.893rem; color:var(--dim); font-weight:300; line-height:1.7}
 .farrow{display:flex; align-items:center; color:var(--faint)}
 @media(max-width:720px){.flow{grid-template-columns:1fr} .farrow{justify-content:center; transform:rotate(90deg)}}
 
 .verdict{border-top:3px double var(--line); border-bottom:3px double var(--line); padding:2.3rem 1rem; text-align:center; background:var(--surf)}
 .verdict .b{font-family:"Noto Serif TC",serif; font-size:clamp(1.45rem,3.8vw,2.05rem); font-weight:900; color:var(--ember); display:block; line-height:1.35}
-.verdict .s{font-size:.85rem; color:var(--dim); display:block; margin-top:.8rem; font-weight:300}
+.verdict .s{font-size:0.96rem; color:var(--dim); display:block; margin-top:.8rem; font-weight:300}
 
 .dims{display:grid; grid-template-columns:repeat(5,1fr); margin-top:1.3rem; border-top:1px solid var(--line)}
 .dim{padding:1rem .85rem; border-right:1px solid var(--line); border-bottom:1px solid var(--line)}
 .dim:nth-child(5){border-right:none}
-.dim .n{font-family:"Cinzel",serif; font-size:.74rem; color:var(--gold); display:block}
-.dim .t{font-family:"Noto Serif TC",serif; font-size:.98rem; font-weight:900; display:block; margin:.3rem 0 .2rem}
-.dim .q{font-size:.75rem; color:var(--dim); font-weight:300; line-height:1.65}
+.dim .n{font-family:"Cinzel",serif; font-size:0.836rem; color:var(--gold); display:block}
+.dim .t{font-family:"Noto Serif TC",serif; font-size:1.107rem; font-weight:900; display:block; margin:.3rem 0 .2rem}
+.dim .q{font-size:0.847rem; color:var(--dim); font-weight:300; line-height:1.65}
 @media(max-width:720px){.dims{grid-template-columns:repeat(2,1fr)} .dim{border-right:none}}
 
 .layers{display:flex; flex-direction:column; border-top:1px solid var(--line)}
@@ -105,34 +105,46 @@ h2 span{display:block; font-family:"Cinzel",serif; font-size:.78rem; letter-spac
 .layer .amt{flex:0 0 8rem; font-family:"Noto Serif TC",serif; font-size:1.55rem; font-weight:900; color:var(--faint); line-height:1.25}
 .layer.real .amt{color:var(--ember)}
 .layer.real{background:var(--surf); padding-left:1.2rem; padding-right:1.2rem}
-.layer .t{font-weight:700; display:block; margin-bottom:.3rem; font-size:1rem}
-.layer .d{font-size:.86rem; color:var(--dim); font-weight:300; line-height:1.8}
+.layer .t{font-weight:700; display:block; margin-bottom:.3rem; font-size:1.13rem}
+.layer .d{font-size:0.972rem; color:var(--dim); font-weight:300; line-height:1.8}
 @media(max-width:720px){.layer{flex-direction:column; gap:.5rem} .layer .amt{flex:none}}
-.oneline{font-family:"Noto Serif TC",serif; border-left:2px solid var(--ember); padding-left:1.2rem; margin:1.5rem 0 0; font-size:1.14rem; font-weight:900; color:var(--ember)}
+.oneline{font-family:"Noto Serif TC",serif; border-left:2px solid var(--ember); padding-left:1.2rem; margin:1.5rem 0 0; font-size:1.288rem; font-weight:900; color:var(--ember)}
 
 .tl{margin-top:.3rem; border-top:1px solid var(--line)}
 .tlrow{display:flex; gap:2rem; padding:1.1rem 0; border-bottom:1px solid var(--line)}
 .tlrow .d8{flex:0 0 8rem; font-family:"Noto Serif TC",serif; font-size:1.22rem; font-weight:900; color:var(--gold)}
 .tlrow.key .d8{color:var(--ember)}
-.tlrow .w{font-size:1rem; font-weight:500}
-.tlrow .w s{display:block; text-decoration:none; font-size:.83rem; color:var(--dim); font-weight:300; margin-top:.15rem}
+.tlrow .w{font-size:1.13rem; font-weight:500}
+.tlrow .w s{display:block; text-decoration:none; font-size:0.938rem; color:var(--dim); font-weight:300; margin-top:.15rem}
 @media(max-width:720px){.tlrow{flex-direction:column; gap:.3rem} .tlrow .d8{flex:none}}
 
 details{border-bottom:1px solid var(--line)}
-summary{cursor:pointer; padding:1rem 0; font-weight:700; font-size:.97rem; list-style:none; display:flex; justify-content:space-between; gap:1rem}
+summary{cursor:pointer; padding:1rem 0; font-weight:700; font-size:1.096rem; list-style:none; display:flex; justify-content:space-between; gap:1rem}
 summary::-webkit-details-marker{display:none}
 summary::after{content:"+"; color:var(--ember); font-size:1.15rem; line-height:1}
 details[open] summary::after{content:"\2013"}
 details[open] summary{color:var(--ember)}
-.db{padding:0 0 1.4rem; font-size:.9rem; color:var(--dim); font-weight:300; line-height:1.9; max-width:44em}
+.db{padding:0 0 1.4rem; font-size:1.017rem; color:var(--dim); font-weight:300; line-height:1.9; max-width:44em}
 .db b{color:var(--ink); font-weight:700}
 .db p{margin:.5rem 0} .db ol{margin:.5rem 0; padding-left:1.3em} .db li{margin:.4rem 0}
 .chips{display:flex; flex-wrap:wrap; gap:.4rem; margin:.3rem 0 .8rem}
-.chip{border:1px solid var(--line); background:var(--surf); padding:.28rem .65rem; font-size:.82rem; color:var(--dim)}
+.chip{border:1px solid var(--line); background:var(--surf); padding:.28rem .65rem; font-size:0.927rem; color:var(--dim)}
 
-footer{margin-top:4rem; padding-top:1.3rem; border-top:3px double var(--line); font-family:"Cinzel",serif; font-size:.75rem; color:var(--faint); letter-spacing:.06em}
+footer{margin-top:4rem; padding-top:1.3rem; border-top:3px double var(--line); font-family:"Cinzel",serif; font-size:0.847rem; color:var(--faint); letter-spacing:.06em}
 a{color:var(--ember)}
 :focus-visible{outline:2px solid var(--ember); outline-offset:3px}
+
+/* FAQ numbering + enlarged small type (2026-08-19) */
+#s8{counter-reset:faq}
+#s8 details>summary{justify-content:flex-start; align-items:baseline}
+#s8 details>summary::after{margin-left:auto}
+#s8 details>summary::before{
+  counter-increment:faq; content:counter(faq,decimal-leading-zero);
+  color:var(--ember); font-weight:700; margin-right:.9rem; flex:0 0 auto;
+  font-variant-numeric:tabular-nums; font-size:.95em;
+}
+#s8 .db{padding-left:2.6rem}
+@media(max-width:720px){#s8 .db{padding-left:0}}
 </style>
 
 <nav><div class="in">
@@ -152,7 +164,7 @@ a{color:var(--ember)}
     <div class="tile"><span class="k">開賽</span><span class="v num">8/28</span><span class="s">工作坊結束即點火</span></div>
     <div class="tile"><span class="k">繳交</span><span class="v num">11/6</span><span class="s">簡報＋POC 繳齊</span></div>
     <div class="tile"><span class="k">決賽</span><span class="v num">11/13</span><span class="s">present + demo（暫定）</span></div>
-    <div class="tile"><span class="k">獎金</span><span class="v num">10萬</span><span class="s">優勝一隊 winner takes all</span></div>
+    <div class="tile"><span class="k">獎金</span><span class="v num">?</span><span class="s">神祕獎金 · 決賽當天揭曉</span></div>
   </div>
 </header>
 
@@ -229,10 +241,10 @@ a{color:var(--ember)}
 </section>
 
 <section id="s5">
-  <div class="head"><span class="ord num">05</span><h2><span>The Money</span>100 萬是計分，10 萬是真的，立案才是重點</h2></div>
+  <div class="head"><span class="ord num">05</span><h2><span>The Money</span>押注是計分，獎金是真的，立案才是重點</h2></div>
   <div class="layers">
     <div class="layer"><span class="amt num">NT$100萬</span><span><span class="t">評審手上的虛擬押注 — 不是現金</span><span class="d">每位評審一筆，可拆給多隊、也可不押完。唯一作用是把「老闆願不願意買單」變成可比較的數字。</span></span></div>
-    <div class="layer real"><span class="amt num">NT$10萬</span><span><span class="t">真的獎金 — 只有第一名有</span><span class="d">發給優勝隊，隊內自行分配。winner takes all。</span></span></div>
+    <div class="layer real"><span class="amt num">?</span><span><span class="t">神祕獎金 — 真的錢，只有第一名有</span><span class="d">金額與名次一起在決賽當天揭曉。發給優勝隊，隊內自行分配。winner takes all。</span></span></div>
     <div class="layer"><span class="amt">真實立案</span><span><span class="t">公司資源 — 玩真的在這裡</span><span class="d">優勝案送進真實立案評估，可能獲得公司資源開發上線。預算與人力依正式流程另行核定。</span></span></div>
   </div>
   <p class="oneline">押注決定名次，不決定預算；名次決定獎勵；立案決定資源。</p>
@@ -245,7 +257,7 @@ a{color:var(--ember)}
 <section id="s6">
   <div class="head"><span class="ord num">06</span><h2><span>Rewards</span>贏了，帶著公司資源做自己部門的事</h2></div>
   <div class="grid g2">
-    <div class="cell"><span class="tag">優勝隊</span><span class="t">獎金 NT$100,000</span><span class="d">發給優勝隊，隊內自行分配。</span></div>
+    <div class="cell"><span class="tag">優勝隊</span><span class="t">神祕獎金</span><span class="d">真的錢，金額於決賽當天與名次一起揭曉。發給優勝隊，隊內自行分配。</span></div>
     <div class="cell"><span class="tag">優勝隊</span><span class="t">專案優先立案</span><span class="d">由提案部門主導、公司出資源——不是多做事，是帶著資源做你本來就想解決的事。</span></div>
     <div class="cell"><span class="tag">優勝隊</span><span class="t">公開表揚＋績效加註</span><span class="d">全公司公告；成員年度考核加註本案事蹟，立案成果列入次年考核參考。</span></div>
     <div class="cell"><span class="tag">所有隊伍</span><span class="t">能力與曝光帶得走</span><span class="d">vibe coding 與五維判斷是自己的；老闆帶著預算聽你講部門痛點，好案子賽後仍可能被撿走立案。</span></div>
@@ -266,10 +278,11 @@ a{color:var(--ember)}
 
 <section id="s8">
   <div class="head"><span class="ord num">08</span><h2><span>FAQ</span>先回答你正要問的那幾題</h2></div>
-  <details><summary>100 萬是真的要給的錢嗎？</summary><div class="db"><p>不是現金，不會發給任何人，它是<b>計分工具</b>——把「老闆願不願意買單」變成數字。真的部分在後面：優勝隊拿 10 萬獎金，優勝案進入真實立案評估。</p></div></details>
+  <details><summary>評審手上的 100 萬是真的要給的錢嗎？</summary><div class="db"><p>不是現金，不會發給任何人，它是<b>計分工具</b>——把「老闆願不願意買單」變成數字。真的部分在後面：優勝隊拿真的獎金（金額決賽當天揭曉），優勝案進入真實立案評估。</p></div></details>
+  <details><summary>獎金是多少？</summary><div class="db"><p><b>神祕獎金——決賽當天與名次一起揭曉。</b>這場比賽從頭到尾就是「全部留到最後一次公開」：評審的分數、押注金額、名次都是當天才揭曉，獎金也一樣。</p><p>可以確定的三件事：這是<b>真的錢</b>、<b>只有優勝隊拿得到</b>、<b>發給團隊由隊內自行分配</b>。</p></div></details>
   <details><summary>100 萬是每隊 100 萬，還是全部隊伍去搶？</summary><div class="db"><p>是<b>每位評審</b> 100 萬，全部隊伍去爭取所有評審的押注。本屆 6 位評審＝總池 600 萬，你的隊伍拿到的是所有評審<b>合計</b>押給你的金額。評審<b>可以不押完</b>——押不完代表「我只買單到這裡」，也是意見。</p></div></details>
   <details><summary>拿到越多押注，之後就能拿到越多開發資源嗎？</summary><div class="db"><p>不是。押注<b>只決定名次</b>。優勝案立案時的實際預算與人力，由公司依正式流程另行核定。</p></div></details>
-  <details><summary>第一名跟拿到押注但沒得第一的隊，差別在哪？</summary><div class="db"><p>獎金、優先立案、公開表揚、績效加註——<b>只有第一名有</b>。其他隊伍的案子若被評審看好，賽後仍可能被立案撿走，但那是額外的好事，不是比賽獎勵。</p></div></details>
+  <details><summary>第一名跟拿到押注但沒得第一的隊，差別在哪？</summary><div class="db"><p>神祕獎金、優先立案、公開表揚、績效加註——<b>只有第一名有</b>。其他隊伍的案子若被評審看好，賽後仍可能被立案撿走，但那是額外的好事，不是比賽獎勵。</p></div></details>
   <details><summary>強制參加、薪水又不會加，部門憑什麼認真做？</summary><div class="db">
     <p>參加是義務，認真做是聰明：</p>
     <p><b>① 既然一定要上場，就把它變成幫部門搶資源的機會</b>——你平常要排隊等的資源，比賽當天在台下等你開口；隨便做，機會就是別的部門的。</p>
