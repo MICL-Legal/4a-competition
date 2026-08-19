@@ -104,7 +104,8 @@ h2 .ord{color:var(--gold); font-size:.8rem; letter-spacing:.2em; display:block; 
 .layer .amt{
   flex:0 0 7.2em; font-size:1.25rem; font-weight:800; color:var(--teal); letter-spacing:-.01em; line-height:1.2;
 }
-.layer .body .t{font-weight:700; font-size:.95rem}
+.layer .body{display:flex; flex-direction:column; gap:.2rem}
+.layer .body .t{font-weight:700; font-size:.95rem; color:var(--teal-deep)}
 .layer .body .d{font-size:.85rem; color:var(--muted); line-height:1.6}
 .layer.real{background:var(--gold-wash); border-color:var(--gold)}
 .layer.real .amt{color:var(--gold)}
@@ -151,7 +152,7 @@ a{color:var(--teal)}
 @media print{
   body{background:#fff; color:#111; font-size:10.5pt}
   .page{max-width:100%; padding:0; gap:1.4rem}
-  details{border-color:#bbb} details .dbody{display:block}
+  details{border-color:#bbb} details>.dbody{display:block !important}
   summary::after{content:""}
   section,.cards,.layers,.flow{break-inside:avoid}
 }
