@@ -1,0 +1,298 @@
+<title>Prometheus: Phoenix Rising · 部門 AI 化競賽規章｜方案 A 烈焰</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Noto+Sans+TC:wght@300;400;500;700;900&family=Archivo:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0806; --surf:#150e09; --surf2:#1e140c;
+  --ink:#f6f0e6; --dim:#a89583; --faint:#7a6858;
+  --ember:#ff6a1f; --gold:#f6b93b; --line:#2a1d13;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"Noto Sans TC",sans-serif; font-weight:400;
+  font-size:16px; line-height:1.75; -webkit-font-smoothing:antialiased;
+}
+.num{font-family:"Archivo","Noto Sans TC",sans-serif; font-variant-numeric:tabular-nums; letter-spacing:-.03em}
+.cz{font-family:"Cinzel",serif; letter-spacing:.06em}
+
+nav{position:sticky; top:0; z-index:9; background:rgba(11,8,6,.93); backdrop-filter:blur(10px); border-bottom:1px solid var(--line)}
+nav .in{max-width:64rem; margin:0 auto; padding:.7rem 1.5rem; display:flex; gap:1.4rem; overflow-x:auto}
+nav a{color:var(--faint); text-decoration:none; font-size:.8rem; font-weight:500; white-space:nowrap; letter-spacing:.04em}
+nav a:hover{color:var(--ember)}
+
+.wrap{max-width:64rem; margin:0 auto; padding:0 1.5rem 6rem}
+
+/* hero */
+.hero{position:relative; padding:5.5rem 0 3.5rem; border-bottom:1px solid var(--line); overflow:hidden}
+.hero::before{
+  content:""; position:absolute; left:-14%; top:-46%; width:62%; height:135%;
+  background:radial-gradient(closest-side, rgba(255,106,31,.20), rgba(246,185,59,.07) 55%, transparent 76%);
+  pointer-events:none;
+}
+.hero>*{position:relative}
+.kicker{font-size:.72rem; letter-spacing:.42em; color:var(--gold); font-weight:700; margin:0 0 1.8rem}
+.lockup{font-family:"Cinzel",serif; font-weight:900; font-size:clamp(2.2rem,6vw,3.9rem); line-height:1.06; letter-spacing:.02em; margin:0 0 .5rem}
+.lockup .p{color:var(--dim); display:block; font-size:.52em; letter-spacing:.22em; font-weight:500; margin-bottom:.5rem}
+.lockup .r{background:linear-gradient(92deg,var(--gold),var(--ember) 62%); -webkit-background-clip:text; background-clip:text; color:transparent}
+h1{font-size:clamp(1.5rem,3.4vw,2.15rem); font-weight:900; letter-spacing:-.02em; margin:.9rem 0 1.7rem; color:var(--ink)}
+h1 small{display:block; font-size:.62em; font-weight:400; color:var(--dim); letter-spacing:.02em; margin-top:.4rem}
+.idea{font-size:clamp(1.05rem,2.2vw,1.32rem); font-weight:500; line-height:1.62; margin:0 0 .9rem; max-width:33em}
+.idea b{color:var(--ember)}
+.sub{margin:0; color:var(--dim); font-size:.93rem; font-weight:300}
+
+.tiles{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line); margin-top:3rem}
+.tile{background:var(--bg); padding:1.5rem 1.3rem}
+.tile .k{font-size:.68rem; letter-spacing:.24em; color:var(--faint); font-weight:700; display:block; margin-bottom:.6rem}
+.tile .v{font-size:2.5rem; font-weight:900; line-height:1; color:var(--gold); display:block}
+.tile .s{font-size:.77rem; color:var(--dim); display:block; margin-top:.55rem; font-weight:300; line-height:1.6}
+@media(max-width:720px){.tiles{grid-template-columns:repeat(2,1fr)}}
+
+/* naming band */
+.saga{margin-top:3rem; border:1px solid var(--line); background:linear-gradient(180deg,var(--surf2),var(--surf)); padding:2rem 1.6rem}
+.saga h3{font-family:"Cinzel",serif; font-size:1.02rem; letter-spacing:.12em; margin:0 0 1.4rem; color:var(--gold); font-weight:700}
+.years{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line)}
+.yr{background:var(--surf); padding:1.15rem 1.1rem}
+.yr .y{font-family:"Archivo",sans-serif; font-size:1.5rem; font-weight:900; color:var(--faint); display:block; letter-spacing:-.03em}
+.yr .t{font-weight:700; display:block; margin:.3rem 0 .25rem; font-size:1rem}
+.yr .d{font-size:.79rem; color:var(--dim); font-weight:300; line-height:1.6}
+.yr.now{background:var(--surf2); box-shadow:inset 0 3px 0 var(--ember)}
+.yr.now .y{color:var(--ember)}
+@media(max-width:720px){.years{grid-template-columns:1fr}}
+.saga p{margin:1.3rem 0 0; font-size:.93rem; color:var(--dim); font-weight:300; max-width:44em}
+.saga p b{color:var(--ink); font-weight:700}
+
+/* sections */
+section{padding:4rem 0 0}
+.head{display:flex; gap:1.6rem; align-items:baseline; margin-bottom:1.8rem}
+.ord{font-family:"Archivo",sans-serif; font-size:3rem; font-weight:900; color:var(--surf2); line-height:.9; flex:0 0 auto; letter-spacing:-.05em}
+h2{font-size:clamp(1.5rem,3vw,2.05rem); font-weight:900; letter-spacing:-.025em; line-height:1.28; margin:0}
+h2 span{display:block; font-family:"Cinzel",serif; font-size:.7rem; letter-spacing:.3em; color:var(--gold); font-weight:700; margin-bottom:.6rem}
+.say{font-size:1rem; color:var(--dim); max-width:44em; margin:1.3rem 0 0; font-weight:300}
+.say b{color:var(--ink); font-weight:700}
+
+.grid{display:grid; gap:1px; background:var(--line); border:1px solid var(--line)}
+.g3{grid-template-columns:repeat(3,1fr)} .g2{grid-template-columns:repeat(2,1fr)}
+@media(max-width:720px){.g3,.g2{grid-template-columns:1fr}}
+.cell{background:var(--bg); padding:1.5rem 1.4rem}
+.cell .tag{font-size:.66rem; letter-spacing:.22em; color:var(--faint); font-weight:700; display:block; margin-bottom:.7rem}
+.cell .t{font-size:1.16rem; font-weight:700; color:var(--gold); display:block; margin-bottom:.5rem; letter-spacing:-.01em}
+.cell .d{font-size:.87rem; color:var(--dim); font-weight:300; line-height:1.7}
+
+.flow{display:grid; grid-template-columns:1fr auto 1fr auto 1fr; align-items:stretch; gap:.7rem}
+.fstep{background:var(--surf); padding:1.4rem 1.2rem; text-align:center; border-top:2px solid var(--line)}
+.fstep.end{border-top-color:var(--ember)}
+.fstep .n{font-size:.66rem; letter-spacing:.22em; color:var(--gold); font-weight:700; display:block; margin-bottom:.5rem}
+.fstep .t{font-size:1.14rem; font-weight:700; display:block; margin-bottom:.4rem}
+.fstep .d{font-size:.79rem; color:var(--dim); font-weight:300; line-height:1.6}
+.farrow{display:flex; align-items:center; color:var(--faint)}
+@media(max-width:720px){.flow{grid-template-columns:1fr} .farrow{justify-content:center; transform:rotate(90deg)}}
+
+.verdict{background:linear-gradient(180deg,var(--surf2),var(--surf)); border:1px solid var(--ember); padding:2.6rem 1.5rem; text-align:center}
+.verdict .b{font-size:clamp(1.5rem,4vw,2.3rem); font-weight:900; letter-spacing:-.03em; color:var(--ember); display:block; line-height:1.25}
+.verdict .s{font-size:.85rem; color:var(--dim); display:block; margin-top:.8rem; font-weight:300}
+
+.dims{display:grid; grid-template-columns:repeat(5,1fr); gap:1px; background:var(--line); border:1px solid var(--line); margin-top:1.3rem}
+.dim{background:var(--bg); padding:1.1rem .9rem}
+.dim .n{font-size:.66rem; color:var(--gold); font-weight:700; display:block; letter-spacing:.14em}
+.dim .t{font-size:.97rem; font-weight:700; display:block; margin:.35rem 0 .2rem}
+.dim .q{font-size:.75rem; color:var(--dim); font-weight:300; line-height:1.55}
+@media(max-width:720px){.dims{grid-template-columns:repeat(2,1fr)}}
+
+.layers{display:flex; flex-direction:column; gap:1px; background:var(--line); border:1px solid var(--line)}
+.layer{background:var(--bg); padding:1.5rem 1.4rem; display:flex; gap:1.8rem; align-items:baseline}
+.layer .amt{flex:0 0 8.5rem; font-family:"Archivo",sans-serif; font-size:1.85rem; font-weight:900; color:var(--faint); line-height:1.1; letter-spacing:-.04em}
+.layer.real{background:var(--surf2)} .layer.real .amt{color:var(--ember)}
+.layer .t{font-size:1.04rem; font-weight:700; display:block; margin-bottom:.35rem}
+.layer .d{font-size:.85rem; color:var(--dim); font-weight:300; line-height:1.7}
+@media(max-width:720px){.layer{flex-direction:column; gap:.6rem} .layer .amt{flex:none}}
+.oneline{border-left:3px solid var(--ember); padding-left:1.2rem; margin:1.4rem 0 0; font-size:1.1rem; font-weight:700; color:var(--gold)}
+
+.tl{margin-top:.4rem}
+.tlrow{display:flex; gap:2rem; padding:1.15rem 0; border-bottom:1px solid var(--line)}
+.tlrow:last-child{border:none}
+.tlrow .d8{flex:0 0 8.5rem; font-family:"Archivo",sans-serif; font-size:1.3rem; font-weight:900; color:var(--gold); line-height:1.2; letter-spacing:-.03em}
+.tlrow.key .d8{color:var(--ember)}
+.tlrow .w{font-size:1rem; font-weight:500}
+.tlrow .w s{display:block; text-decoration:none; font-size:.82rem; color:var(--dim); font-weight:300; margin-top:.2rem}
+@media(max-width:720px){.tlrow{flex-direction:column; gap:.35rem} .tlrow .d8{flex:none}}
+
+details{border-bottom:1px solid var(--line)}
+summary{cursor:pointer; padding:1.05rem 0; font-weight:700; font-size:.97rem; list-style:none; display:flex; justify-content:space-between; gap:1rem; color:var(--ink)}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+"; color:var(--ember); font-weight:700; font-size:1.2rem; line-height:1}
+details[open] summary::after{content:"\2013"}
+details[open] summary{color:var(--gold)}
+.db{padding:0 0 1.4rem; font-size:.89rem; color:var(--dim); font-weight:300; line-height:1.85; max-width:48em}
+.db b{color:var(--ink); font-weight:700}
+.db p{margin:.5rem 0} .db ol{margin:.5rem 0; padding-left:1.3em} .db li{margin:.4rem 0}
+.chips{display:flex; flex-wrap:wrap; gap:.4rem; margin:.3rem 0 .8rem}
+.chip{border:1px solid var(--line); padding:.3rem .7rem; font-size:.81rem; color:var(--dim)}
+
+footer{margin-top:4.5rem; padding-top:1.5rem; border-top:1px solid var(--line); font-size:.77rem; color:var(--faint)}
+a{color:var(--ember)}
+:focus-visible{outline:2px solid var(--gold); outline-offset:3px}
+</style>
+
+<nav><div class="in">
+  <a href="#s0">命名</a><a href="#s1">參賽</a><a href="#s2">主題</a><a href="#s3">交付</a><a href="#s4">勝負</a>
+  <a href="#s5">金錢</a><a href="#s6">獎勵</a><a href="#s7">時程</a><a href="#s8">常見問題</a>
+</div></nav>
+
+<div class="wrap">
+
+<header class="hero">
+  <p class="kicker">2026 4A 工作坊 · 全部門強制參加</p>
+  <p class="lockup"><span class="p">PROMETHEUS</span><span class="r">Phoenix Rising</span></p>
+  <h1>浴火鳳凰 · 部門 AI 化競賽<small>燒掉繁瑣重複的流程，煉出真的能跑的部門 AI 雛形</small></h1>
+  <p class="idea">把你部門最痛的流程 AI 化，做出真的能跑的雛形——<b>讓老闆當場押錢給你</b>。</p>
+  <p class="sub">部門主管領軍 · 用 No-code / Low-code 與 vibe coding 做 POC · 押注最高的隊伍獲勝，優勝案送進真實立案</p>
+  <div class="tiles">
+    <div class="tile"><span class="k">開賽</span><span class="v num">8/28</span><span class="s">工作坊結束即點火</span></div>
+    <div class="tile"><span class="k">繳交</span><span class="v num">11/6</span><span class="s">簡報＋POC 繳齊</span></div>
+    <div class="tile"><span class="k">決賽</span><span class="v num">11/13</span><span class="s">present + demo（暫定）</span></div>
+    <div class="tile"><span class="k">獎金</span><span class="v num">10萬</span><span class="s">優勝一隊 winner takes all</span></div>
+  </div>
+</header>
+
+<section id="s0">
+  <div class="saga">
+    <h3>Why Phoenix Rising</h3>
+    <div class="years">
+      <div class="yr"><span class="y num">2024</span><span class="t">點燃火種</span><span class="d">帶進 AI，讓大家開始認識、開始嘗試。</span></div>
+      <div class="yr"><span class="y num">2025</span><span class="t">AI Agent 幫幫賽</span><span class="d">工具用起來了，但還不夠聰明、不夠成形。</span></div>
+      <div class="yr now"><span class="y num">2026</span><span class="t">浴火重生</span><span class="d">火種煉成力量——舊流程燒掉，長出部門的 AI 雛形。</span></div>
+    </div>
+    <p>4A 的 master plan 是<b>普羅米修斯計畫</b>：點燃創新、賦能轉型。今年是 <b>Phoenix Rising</b>——去年那些覺得「還不夠好用」的 AI 應用，正是它們涅槃升級的時刻。用 <b>No-code / Low-code 與 Vibe Coding</b>，燒掉過去繁瑣重複的流程，煉出一個真的可以跑、可以現場 demo 的部門 AI 雛形。</p>
+  </div>
+</section>
+
+<section id="s1">
+  <div class="head"><span class="ord num">01</span><h2><span>Entry</span>全部門都要參加，主管就是負責人</h2></div>
+  <div class="grid g3">
+    <div class="cell"><span class="tag">誰參加</span><span class="t">13 個部門</span><span class="d">全公司部級部門一律出隊，課級單位併入所屬部門。</span></div>
+    <div class="cell"><span class="tag">誰負責</span><span class="t">部門主管</span><span class="d">統籌題目、分工、進度與繳交，代表部門出賽。</span></div>
+    <div class="cell"><span class="tag">怎麼聯繫</span><span class="t">只找主管</span><span class="d">4A 所有通知與收件都對主管；部門內分工由主管決定。</span></div>
+  </div>
+  <p class="say">執行團隊 <b>2–4 人</b>（指派或自願皆可）。<b>不會寫程式也能參加</b>——用 vibe coding 讓 AI 寫，工作坊會教。</p>
+  <details><summary>參賽部門完整名單</summary><div class="db">
+    <div class="chips"><span class="chip">長照事業部</span><span class="chip">洗滌事業部</span><span class="chip">醫療業務部</span><span class="chip">代工業務部</span><span class="chip">供應鏈管理部</span><span class="chip">內部控制部</span><span class="chip">行銷部</span><span class="chip">資訊部</span><span class="chip">法務部</span><span class="chip">財務部</span><span class="chip">會計部</span><span class="chip">行政管理部</span><span class="chip">人力資源部</span></div>
+    <p>依 2026-06-05 生效組織圖，共 13 個部級部門；如有調整以 4A 公告為準。</p>
+  </div></details>
+</section>
+
+<section id="s2">
+  <div class="head"><span class="ord num">02</span><h2><span>Theme</span>先燒掉一條流程，講出整個部門的路</h2></div>
+  <div class="flow">
+    <div class="fstep"><span class="n">起火點</span><span class="t">切入流程</span><span class="d">部門裡最有價值、最值得 AI 化的那一條</span></div>
+    <div class="farrow">→</div>
+    <div class="fstep"><span class="n">延燒</span><span class="t">接更多工作流</span><span class="d">一條做成後，把相鄰流程逐步接進來</span></div>
+    <div class="farrow">→</div>
+    <div class="fstep end"><span class="n">重生</span><span class="t">部門 AI 化</span><span class="d">整個部門的運作跑在 AI 上</span></div>
+  </div>
+  <p class="say">部門由多個流程組成。<b>POC 只做一條</b>，但<b>簡報必須帶路線圖</b>——只做一條工作流的自動化、講不出後面的路，就還不是部門 AI 化。</p>
+</section>
+
+<section id="s3">
+  <div class="head"><span class="ord num">03</span><h2><span>Deliverables</span>當天交三樣東西</h2></div>
+  <div class="grid g3">
+    <div class="cell"><span class="tag">01</span><span class="t">簡報 10 分鐘</span><span class="d">痛點 → 目標 → demo → 驗證過的效益 → 部門 AI 化路線圖＋資源請求</span></div>
+    <div class="cell"><span class="tag">02</span><span class="t">能跑的雛形</span><span class="d">No-code / Low-code 或 vibe coding 做的 POC，現場實跑一條主流程。不求完整，求真的能動。</span></div>
+    <div class="cell"><span class="tag">03</span><span class="t">動手前自評</span><span class="d">一張表證明五個維度都想過（工作坊提供工具）。</span></div>
+  </div>
+  <details><summary>三大鐵則——違反任一項即不具獲獎資格</summary><div class="db"><ol>
+    <li><b>效益可量化</b>：換算成數字（營收增／成本降），並由<b>部門主管事前確認</b>，防止浮報。賺錢單位用營收／成本呈現；成本中心可用「降低部門年度預算／工時」呈現。</li>
+    <li><b>資料集中公司機房</b>：專案用到的資料一律集中公司管理，不散落個人雲端帳號。</li>
+    <li><b>可追蹤、非黑盒子</b>：留得下紀錄、交得了接、換人也能續用，防止「比完即廢」。不指定工具，但必須可追蹤。</li>
+  </ol></div></details>
+</section>
+
+<section id="s4">
+  <div class="head"><span class="ord num">04</span><h2><span>Verdict</span>押注最高的隊伍獲勝</h2></div>
+  <div class="verdict">
+    <span class="b">獲得押注合計最高 ＝ 優勝</span>
+    <span class="s">押注同額時，五維總分高者勝；再同分由評審合議</span>
+  </div>
+  <p class="say">五維判斷框架貫穿全場，角色是<b>讓老闆敢押你</b>——評審照這五維拷問、打分，決定押多少：</p>
+  <div class="dims">
+    <div class="dim"><span class="n">01</span><span class="t">商業價值</span><span class="q">效益講得出數字嗎</span></div>
+    <div class="dim"><span class="n">02</span><span class="t">技術選型</span><span class="q">該不該做成 Agent</span></div>
+    <div class="dim"><span class="n">03</span><span class="t">成本控管</span><span class="q">月帳單估過嗎</span></div>
+    <div class="dim"><span class="n">04</span><span class="t">成效驗收</span><span class="q">怎麼證明夠好</span></div>
+    <div class="dim"><span class="n">05</span><span class="t">資安防護</span><span class="q">資料風險想過嗎</span></div>
+  </div>
+  <details><summary>比賽當天怎麼跑（每隊 17 分鐘）</summary><div class="db">
+    <p><b>簡報＋demo 10 分鐘</b> → <b>評審拷問 5 分鐘</b>（照五維追問）→ <b>評審計分 2 分鐘</b>（各自寫在紙上，不討論、不公布）。</p>
+    <p>全部隊伍結束後<b>一次揭曉</b>分數與押注金額，宣布優勝。中途沒有人知道老闆買不買單——這是故意的：後面的隊伍不受前面分數影響。</p>
+  </div></details>
+</section>
+
+<section id="s5">
+  <div class="head"><span class="ord num">05</span><h2><span>The Money</span>100 萬是計分，10 萬是真的，立案才是重點</h2></div>
+  <div class="layers">
+    <div class="layer"><span class="amt num">NT$100萬</span><span><span class="t">評審手上的虛擬押注 — 不是現金</span><span class="d">每位評審一筆，可拆給多隊、也可不押完。唯一作用是把「老闆願不願意買單」變成可比較的數字。</span></span></div>
+    <div class="layer real"><span class="amt num">NT$10萬</span><span><span class="t">真的獎金 — 只有第一名有</span><span class="d">發給優勝隊，隊內自行分配。winner takes all。</span></span></div>
+    <div class="layer"><span class="amt">真實立案</span><span><span class="t">公司資源 — 玩真的在這裡</span><span class="d">優勝案送進真實立案評估，可能獲得公司資源開發上線。預算與人力依正式流程另行核定。</span></span></div>
+  </div>
+  <p class="oneline">押注決定名次，不決定預算；名次決定獎勵；立案決定資源。</p>
+  <details><summary>押注怎麼算（舉例）</summary><div class="db">
+    <p>本屆 6 位評審、假設 4 支隊伍。每位評審各自把（最多）100 萬拆給看好的隊：A 隊拿到合計 250 萬、B 隊 180 萬、C 隊 90 萬、D 隊 0 萬——<b>A 隊獲勝</b>。</p>
+    <p>全場總池＝6 × 100 萬＝<b>NT$600 萬</b>；評審可以不押完，所以各隊合計不必等於總池。</p>
+  </div></details>
+</section>
+
+<section id="s6">
+  <div class="head"><span class="ord num">06</span><h2><span>Rewards</span>贏了，帶著公司資源做自己部門的事</h2></div>
+  <div class="grid g2">
+    <div class="cell"><span class="tag">優勝隊</span><span class="t">獎金 NT$100,000</span><span class="d">發給優勝隊，隊內自行分配。</span></div>
+    <div class="cell"><span class="tag">優勝隊</span><span class="t">專案優先立案</span><span class="d">由提案部門主導、公司出資源——不是多做事，是帶著資源做你本來就想解決的事。</span></div>
+    <div class="cell"><span class="tag">優勝隊</span><span class="t">公開表揚＋績效加註</span><span class="d">全公司公告；成員年度考核加註本案事蹟，立案成果列入次年考核參考。</span></div>
+    <div class="cell"><span class="tag">所有隊伍</span><span class="t">能力與曝光帶得走</span><span class="d">vibe coding 與五維判斷是自己的；老闆帶著預算聽你講部門痛點，好案子賽後仍可能被撿走立案。</span></div>
+  </div>
+</section>
+
+<section id="s7">
+  <div class="head"><span class="ord num">07</span><h2><span>Timeline</span>兩個月煉出一件真的能跑的東西</h2></div>
+  <div class="tl">
+    <div class="tlrow key"><span class="d8 num">8/28</span><span class="w">點火開賽<s>週五 · 工作坊第三場結束即開始</s></span></div>
+    <div class="tlrow"><span class="d8 num">9/11</span><span class="w">主管回報參賽資料<s>週五 · 執行團隊名單＋切入流程題目一句話</s></span></div>
+    <div class="tlrow"><span class="d8 num">兩個月</span><span class="w">煉造期<s>8/28–11/6 · 做出能 demo 的 POC</s></span></div>
+    <div class="tlrow key"><span class="d8 num">11/6</span><span class="w">繳交截止<s>週五 · 簡報（PPT）、POC、動手前自評全部繳齊</s></span></div>
+    <div class="tlrow key"><span class="d8 num">11/13</span><span class="w">決賽 present + demo<s>週五（暫定）· 當天一次揭曉，宣布優勝</s></span></div>
+  </div>
+  <p class="say">評審 6 位：<b>甜董、總裁、威總、法務長、Ricky 副總、Tino 協理</b>（押注總池 NT$600 萬）。押注優勝案金額最高的評審，將出任該案立案後的 sponsor。</p>
+</section>
+
+<section id="s8">
+  <div class="head"><span class="ord num">08</span><h2><span>FAQ</span>先回答你正要問的那幾題</h2></div>
+  <details><summary>100 萬是真的要給的錢嗎？</summary><div class="db"><p>不是現金，不會發給任何人，它是<b>計分工具</b>——把「老闆願不願意買單」變成數字。真的部分在後面：優勝隊拿 10 萬獎金，優勝案進入真實立案評估。</p></div></details>
+  <details><summary>100 萬是每隊 100 萬，還是全部隊伍去搶？</summary><div class="db"><p>是<b>每位評審</b> 100 萬，全部隊伍去爭取所有評審的押注。本屆 6 位評審＝總池 600 萬，你的隊伍拿到的是所有評審<b>合計</b>押給你的金額。評審<b>可以不押完</b>——押不完代表「我只買單到這裡」，也是意見。</p></div></details>
+  <details><summary>拿到越多押注，之後就能拿到越多開發資源嗎？</summary><div class="db"><p>不是。押注<b>只決定名次</b>。優勝案立案時的實際預算與人力，由公司依正式流程另行核定。</p></div></details>
+  <details><summary>第一名跟拿到押注但沒得第一的隊，差別在哪？</summary><div class="db"><p>獎金、優先立案、公開表揚、績效加註——<b>只有第一名有</b>。其他隊伍的案子若被評審看好，賽後仍可能被立案撿走，但那是額外的好事，不是比賽獎勵。</p></div></details>
+  <details><summary>強制參加、薪水又不會加，部門憑什麼認真做？</summary><div class="db">
+    <p>參加是義務，認真做是聰明：</p>
+    <p><b>① 既然一定要上場，就把它變成幫部門搶資源的機會</b>——你平常要排隊等的資源，比賽當天在台下等你開口；隨便做，機會就是別的部門的。</p>
+    <p><b>② 能力帶得走</b>——vibe coding 和五維判斷是你個人的 AI 能力，離開這家公司都有用。</p>
+    <p><b>③ 投入很有限</b>——目標是「一條主流程能 demo」，不是完整系統。</p>
+  </div></details>
+  <details><summary>「部門 AI 化」是要把整個部門做完嗎？</summary><div class="db"><p>不是。<b>POC 只做一個切入流程</b>（痛點常發生、效益講得出數字、兩個月做得出雛形），但<b>簡報要講路線圖</b>：這條做成後，下一步接哪些工作流、最後整個部門長什麼樣。</p></div></details>
+  <details><summary>不會寫程式可以參加嗎？輸了會怎樣？</summary><div class="db">
+    <p><b>不會寫程式可以。</b>vibe coding 就是用自然語言讓 AI 寫程式，工作坊會教。比的是判斷力，不是程式功力。</p>
+    <p><b>輸了不會怎樣。</b>分數評的是這次的提案，不是部門績效；參賽本身已納入部門年度紀錄。揭曉分數是為了讓「老闆買不買單」透明，不是排名羞辱。</p>
+  </div></details>
+  <details><summary>給評審：你的四個任務</summary><div class="db">
+    <p>你扮演的不是老師，是<b>拿自己預算出來投資的老闆</b>。</p>
+    <ol>
+      <li><b>拷問</b>：照五維追問，揭穿空殼——講不出數字的價值、反射性上 Agent、沒估過的帳單，當場問出來。</li>
+      <li><b>押注</b>：把判斷變成金額。只押你真的會買單的案子；都不想買就少押或不押。</li>
+      <li><b>盲評</b>：分數與金額寫在紙上，不與其他評審討論，不當場透露。</li>
+      <li><b>玩真的</b>：優勝案可能真的立案，押最多的評審出任該案 sponsor。押注前想一下：這個案子明天真的啟動，你願不願意當它的支持者。</li>
+    </ol>
+  </div></details>
+</section>
+
+<footer>PROMETHEUS: PHOENIX RISING · 2026 4A 工作坊部門 AI 化競賽 · 規章 v4（2026-08-19）· 主辦：4A 小組 · 設計方案 A｜烈焰</footer>
+
+</div>
