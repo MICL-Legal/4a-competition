@@ -1,252 +1,262 @@
-<title>「部門 AI 化」競賽規章</title>
+<title>Prometheus: Phoenix Rising · 部門 AI 化競賽規章</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Noto+Serif+TC:wght@400;600;900&family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 <style>
-html{font-size:20px}
+html{font-size:20px; scroll-behavior:smooth}
 :root{
-  --bg:#f7f6f2; --card:#ffffff; --ink:#16221f; --muted:#5d6b67; --faint:#8a9793;
-  --teal:#0f5c55; --teal-deep:#0a3b36; --teal-wash:#eef4f2;
-  --gold:#9c7318; --gold-wash:#f6efdc;
-  --line:#e0dbcf; --line-mid:#c8c1ae;
+  --bg:#f7f6f2; --surf:#ffffff; --surf2:#eef4f2; --warm:#f6efdc;
+  --ink:#16221f; --dim:#5d6b67; --faint:#8a9793;
+  --ember:#0f5c55; --gold:#9c7318; --line:#e0dbcf; --line-mid:#c8c1ae;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --bg:#0d1a18; --card:#142622; --ink:#e9e5d9; --muted:#95a49f; --faint:#75837f;
-    --teal:#54b8ab; --teal-deep:#82d4c8; --teal-wash:#173029;
-    --gold:#d5ac54; --gold-wash:#2b2415;
-    --line:#23403a; --line-mid:#345650;
+    --bg:#0d1a18; --surf:#142622; --surf2:#173029; --warm:#2b2415;
+    --ink:#e9e5d9; --dim:#95a49f; --faint:#75837f;
+    --ember:#54b8ab; --gold:#d5ac54; --line:#23403a; --line-mid:#345650;
   }
 }
 :root[data-theme="dark"]{
-  --bg:#0d1a18; --card:#142622; --ink:#e9e5d9; --muted:#95a49f; --faint:#75837f;
-  --teal:#54b8ab; --teal-deep:#82d4c8; --teal-wash:#173029;
-  --gold:#d5ac54; --gold-wash:#2b2415;
-  --line:#23403a; --line-mid:#345650;
+  --bg:#0d1a18; --surf:#142622; --surf2:#173029; --warm:#2b2415;
+  --ink:#e9e5d9; --dim:#95a49f; --faint:#75837f;
+  --ember:#54b8ab; --gold:#d5ac54; --line:#23403a; --line-mid:#345650;
 }
 *{box-sizing:border-box}
 body{
   margin:0; background:var(--bg); color:var(--ink);
-  font-family:"Noto Sans TC",sans-serif;
+  font-family:"Noto Sans TC",sans-serif; font-weight:400;
   font-size:1rem; line-height:1.8; -webkit-font-smoothing:antialiased;
 }
-.page{max-width:38em; margin:0 auto; padding:3rem 1.4rem 4.5rem; display:flex; flex-direction:column; gap:2.6rem}
-.num{font-variant-numeric:tabular-nums}
+.num{font-variant-numeric:tabular-nums; letter-spacing:-.01em}
+.cz{font-family:"Cinzel",serif}
 
-/* ---------- hero ---------- */
-.hero{display:flex; flex-direction:column; gap:1.4rem}
-.eyebrow{font-size:0.85rem; letter-spacing:.34em; color:var(--gold); font-weight:700; margin:0}
-h1{
-  font-family:"Noto Serif TC",serif; font-weight:700;
-  font-size:2.6rem; line-height:1.22; letter-spacing:-.01em; margin:0; color:var(--teal-deep);
-}
-.bigidea{
-  font-size:1.22rem; line-height:1.6; margin:0; color:var(--ink); font-weight:600;
-  border-left:3px solid var(--gold); padding-left:1rem; text-wrap:balance;
-}
-.subline{margin:0; font-size:0.95rem; color:var(--muted)}
-.tiles{display:grid; grid-template-columns:repeat(4,1fr); gap:.6rem}
-.tile{background:var(--card); border:1px solid var(--line); padding:.85rem .9rem; display:flex; flex-direction:column; gap:.15rem}
-.tile .k{font-size:0.85rem; letter-spacing:.14em; color:var(--faint); font-weight:700}
-.tile .v{font-size:1.45rem; font-weight:800; color:var(--teal); line-height:1.15; letter-spacing:-.02em}
-.tile .s{font-size:0.85rem; color:var(--muted)}
-@media(max-width:640px){ .tiles{grid-template-columns:repeat(2,1fr)} h1{font-size:2.05rem} }
+nav{position:sticky; top:0; z-index:9; background:var(--bg); border-bottom:1px solid var(--line)}
+nav .in{max-width:46rem; margin:0 auto; padding:.7rem 1.4rem; display:flex; gap:1.4rem; overflow-x:auto}
+nav a{color:var(--faint); text-decoration:none; font-size:.87rem; white-space:nowrap; letter-spacing:.05em}
+nav a:hover{color:var(--ember)}
 
-/* ---------- section ---------- */
-section{display:flex; flex-direction:column; gap:.95rem}
-h2{
-  font-family:"Noto Serif TC",serif; font-weight:700; font-size:1.42rem;
-  line-height:1.4; margin:0; color:var(--teal-deep); text-wrap:balance;
-  padding-top:1.1rem; border-top:1px solid var(--line-mid);
-}
-h2 .ord{color:var(--gold); font-size:0.85rem; letter-spacing:.2em; display:block; margin-bottom:.45rem; font-family:inherit}
-.say{margin:0; font-size:1.0rem}
-.say b{color:var(--teal)}
+.wrap{max-width:46rem; margin:0 auto; padding:0 1.4rem 5rem}
 
-/* ---------- cards ---------- */
-.cards{display:grid; gap:.7rem}
-.c3{grid-template-columns:repeat(3,1fr)}
-.c2{grid-template-columns:repeat(2,1fr)}
-@media(max-width:640px){ .c3,.c2{grid-template-columns:1fr} }
-.card{background:var(--card); border:1px solid var(--line); padding:1rem 1.05rem; display:flex; flex-direction:column; gap:.35rem}
-.card .t{font-weight:700; color:var(--teal); font-size:1.0rem}
-.card .d{font-size:0.88rem; color:var(--muted); line-height:1.65}
-.card .tag{font-size:0.85rem; letter-spacing:.14em; color:var(--faint); font-weight:700}
+.hero{padding:3.6rem 0 2.6rem; border-bottom:3px double var(--line-mid)}
+.kicker{font-size:.85rem; letter-spacing:.34em; color:var(--gold); font-weight:700; margin:0 0 1.5rem}
+.lockup{font-family:"Cinzel",serif; font-weight:900; font-size:clamp(1.9rem,5.2vw,3.1rem); line-height:1.12; letter-spacing:.03em; margin:0 0 .5rem; color:var(--ink)}
+.lockup .p{color:var(--faint); display:block; font-size:.5em; letter-spacing:.26em; font-weight:700; margin-bottom:.55rem}
+.lockup .r{color:var(--ember)}
+h1{font-family:"Noto Serif TC",serif; font-size:clamp(1.45rem,3.3vw,2rem); font-weight:900; line-height:1.4; letter-spacing:-.01em; margin:1rem 0 1.5rem; color:var(--ember)}
+h1 small{display:block; font-size:.6em; font-weight:400; color:var(--dim); margin-top:.45rem; line-height:1.7}
+.idea{font-size:clamp(1.05rem,2.2vw,1.28rem); font-weight:600; line-height:1.6; margin:0 0 .9rem; border-left:3px solid var(--gold); padding-left:1rem; max-width:32em}
+.idea b{color:var(--ember)}
+.sub{margin:0; color:var(--dim); font-size:.95rem; font-weight:400}
 
-/* ---------- flow ---------- */
-.flow{display:flex; align-items:stretch; gap:.5rem}
-.flow .step{
-  flex:1; background:var(--card); border:1px solid var(--line); padding:.9rem;
-  display:flex; flex-direction:column; gap:.25rem; text-align:center;
-}
-.flow .step .n{font-size:0.85rem; letter-spacing:.16em; color:var(--gold); font-weight:700}
-.flow .step .t{font-weight:700; color:var(--teal); font-size:1.0rem}
-.flow .step .d{font-size:0.85rem; color:var(--muted)}
-.flow .arrow{display:flex; align-items:center; color:var(--line-mid); font-size:1.1rem}
-.flow .step.end{background:var(--teal-wash); border-color:var(--teal)}
-@media(max-width:640px){ .flow{flex-direction:column} .flow .arrow{justify-content:center; transform:rotate(90deg)} }
+.tiles{display:grid; grid-template-columns:repeat(4,1fr); gap:.6rem; margin-top:2.4rem}
+.tile{background:var(--surf); border:1px solid var(--line); padding:.9rem 1rem}
+.tile .k{font-size:.85rem; letter-spacing:.14em; color:var(--faint); font-weight:700; display:block; margin-bottom:.3rem}
+.tile .v{font-size:1.6rem; font-weight:800; color:var(--ember); line-height:1.15; letter-spacing:-.02em; display:block}
+.tile .s{font-size:.87rem; color:var(--dim); display:block; margin-top:.3rem; line-height:1.55}
+@media(max-width:640px){.tiles{grid-template-columns:repeat(2,1fr)}}
 
-/* ---------- verdict ---------- */
-.verdict{
-  background:var(--teal-wash); border:1px solid var(--teal); padding:1.3rem 1.2rem;
-  text-align:center; display:flex; flex-direction:column; gap:.35rem;
-}
-.verdict .big{font-size:1.5rem; font-weight:800; color:var(--teal-deep); letter-spacing:-.01em; line-height:1.35}
-.verdict .sub{font-size:0.85rem; color:var(--muted)}
+.saga{margin-top:2.4rem; border:1px solid var(--line); background:var(--surf); padding:1.5rem 1.3rem}
+.saga h3{font-family:"Cinzel",serif; font-size:1.05rem; letter-spacing:.14em; margin:0 0 1.1rem; color:var(--gold); font-weight:900}
+.years{display:grid; grid-template-columns:repeat(3,1fr); gap:.6rem}
+.yr{background:var(--bg); border:1px solid var(--line); padding:.9rem 1rem}
+.yr .y{font-size:1.3rem; font-weight:800; color:var(--faint); display:block; font-variant-numeric:tabular-nums}
+.yr .t{font-family:"Noto Serif TC",serif; font-weight:900; display:block; margin:.25rem 0 .2rem; font-size:1.05rem; color:var(--ink)}
+.yr .d{font-size:.87rem; color:var(--dim); line-height:1.65}
+.yr.now{background:var(--surf2); border-color:var(--ember)}
+.yr.now .y{color:var(--ember)}
+@media(max-width:640px){.years{grid-template-columns:1fr}}
+.saga p{margin:1.1rem 0 0; font-size:.95rem; color:var(--dim); max-width:44em}
+.saga p b{color:var(--ink); font-weight:700}
 
-/* ---------- five dims ---------- */
-.dims{display:grid; grid-template-columns:repeat(5,1fr); gap:.45rem}
-.dim{border:1px solid var(--line); background:var(--card); padding:.7rem .6rem; display:flex; flex-direction:column; gap:.2rem}
-.dim .n{font-size:0.85rem; color:var(--gold); font-weight:800; letter-spacing:.1em}
-.dim .t{font-weight:700; font-size:0.9rem; color:var(--teal)}
-.dim .q{font-size:0.85rem; color:var(--muted); line-height:1.5}
-@media(max-width:640px){ .dims{grid-template-columns:repeat(2,1fr)} }
+section{padding:2.8rem 0 0}
+.head{margin-bottom:1.3rem; padding-top:1.1rem; border-top:1px solid var(--line-mid)}
+.ord{display:none}
+h2{font-family:"Noto Serif TC",serif; font-size:clamp(1.35rem,2.9vw,1.75rem); font-weight:900; line-height:1.4; margin:0; color:var(--ember); letter-spacing:-.01em}
+h2 span{display:block; font-family:"Cinzel",serif; font-size:.85rem; letter-spacing:.24em; color:var(--gold); font-weight:700; margin-bottom:.45rem}
+.say{font-size:1rem; color:var(--ink); max-width:42em; margin:1.1rem 0 0}
+.say b{color:var(--ember); font-weight:700}
 
-/* ---------- money layers ---------- */
+.grid{display:grid; gap:.7rem}
+.g3{grid-template-columns:repeat(3,1fr)} .g2{grid-template-columns:repeat(2,1fr)}
+@media(max-width:640px){.g3,.g2{grid-template-columns:1fr}}
+.cell{background:var(--surf); border:1px solid var(--line); padding:1rem 1.05rem}
+.cell .tag{font-size:.85rem; letter-spacing:.14em; color:var(--faint); font-weight:700; display:block; margin-bottom:.35rem}
+.cell .t{font-weight:700; color:var(--ember); font-size:1.05rem; display:block; margin-bottom:.3rem}
+.cell .d{font-size:.9rem; color:var(--dim); line-height:1.7}
+
+.flow{display:grid; grid-template-columns:1fr auto 1fr auto 1fr; align-items:stretch; gap:.5rem}
+.fstep{background:var(--surf); border:1px solid var(--line); padding:.95rem .9rem; text-align:center}
+.fstep.end{background:var(--surf2); border-color:var(--ember)}
+.fstep .n{font-size:.85rem; letter-spacing:.16em; color:var(--gold); font-weight:700; display:block; margin-bottom:.3rem}
+.fstep .t{font-weight:700; color:var(--ember); font-size:1.05rem; display:block; margin-bottom:.25rem}
+.fstep .d{font-size:.87rem; color:var(--dim); line-height:1.6}
+.farrow{display:flex; align-items:center; color:var(--line-mid); font-size:1.15rem}
+@media(max-width:640px){.flow{grid-template-columns:1fr} .farrow{justify-content:center; transform:rotate(90deg)}}
+
+.verdict{background:var(--surf2); border:1px solid var(--ember); padding:1.5rem 1.2rem; text-align:center}
+.verdict .b{font-family:"Noto Serif TC",serif; font-size:clamp(1.3rem,3.4vw,1.85rem); font-weight:900; color:var(--ember); display:block; line-height:1.35}
+.verdict .s{font-size:.9rem; color:var(--dim); display:block; margin-top:.55rem}
+
+.dims{display:grid; grid-template-columns:repeat(5,1fr); gap:.45rem; margin-top:1.1rem}
+.dim{border:1px solid var(--line); background:var(--surf); padding:.7rem .65rem}
+.dim .n{font-size:.85rem; color:var(--gold); font-weight:800; letter-spacing:.1em; display:block}
+.dim .t{font-weight:700; font-size:.98rem; color:var(--ember); display:block; margin:.2rem 0 .15rem}
+.dim .q{font-size:.87rem; color:var(--dim); line-height:1.55}
+@media(max-width:640px){.dims{grid-template-columns:repeat(2,1fr)}}
+
 .layers{display:flex; flex-direction:column; gap:.5rem}
-.layer{display:flex; gap:.9rem; align-items:center; background:var(--card); border:1px solid var(--line); padding:.9rem 1rem}
-.layer .amt{
-  flex:0 0 7.2em; font-size:1.25rem; font-weight:800; color:var(--teal); letter-spacing:-.01em; line-height:1.2;
-}
-.layer .body{display:flex; flex-direction:column; gap:.2rem}
-.layer .body .t{font-weight:700; font-size:0.95rem; color:var(--teal-deep)}
-.layer .body .d{font-size:0.85rem; color:var(--muted); line-height:1.6}
-.layer.real{background:var(--gold-wash); border-color:var(--gold)}
+.layer{display:flex; gap:1.1rem; align-items:baseline; background:var(--surf); border:1px solid var(--line); padding:1rem 1.1rem}
+.layer .amt{flex:0 0 8.5rem; font-family:"Noto Serif TC",serif; font-size:1.45rem; font-weight:900; color:var(--faint); line-height:1.25; white-space:nowrap}
+.layer .amt em{display:block; font-style:normal; font-size:.85rem; letter-spacing:.12em; opacity:.8; font-family:"Noto Sans TC",sans-serif; font-weight:600}
+.layer.real{background:var(--warm); border-color:var(--gold)}
 .layer.real .amt{color:var(--gold)}
-@media(max-width:640px){ .layer{flex-direction:column; align-items:flex-start; gap:.3rem} .layer .amt{flex:none} }
-.oneline{
-  border-left:3px solid var(--gold); padding:.55rem 0 .55rem 1rem; margin:0;
-  font-weight:700; color:var(--teal-deep); font-size:1.0rem;
-}
+.layer .t{font-weight:700; font-size:1.02rem; color:var(--ember); display:block; margin-bottom:.25rem}
+.layer .d{font-size:.9rem; color:var(--dim); line-height:1.7; display:block}
+@media(max-width:640px){.layer{flex-direction:column; gap:.4rem} .layer .amt{flex:none}}
+.oneline{font-family:"Noto Serif TC",serif; border-left:3px solid var(--gold); padding:.5rem 0 .5rem 1rem; margin:1.1rem 0 0; font-weight:900; color:var(--ember); font-size:1.08rem}
 
-/* ---------- timeline ---------- */
-.tl{display:flex; flex-direction:column; gap:0}
-.tl .row{display:flex; gap:1rem; align-items:flex-start; padding:.75rem 0; border-bottom:1px solid var(--line)}
-.tl .row:last-child{border-bottom:none}
-.tl .date{flex:0 0 7.5em; font-weight:800; color:var(--teal); font-size:1.02rem}
-.tl .what{font-size:0.93rem}
-.tl .what .sub{color:var(--muted); font-size:0.85rem; display:block}
-.tl .row.key .date{color:var(--gold)}
+.tl{display:flex; flex-direction:column}
+.tlrow{display:flex; gap:1.2rem; align-items:flex-start; padding:.8rem 0; border-bottom:1px solid var(--line)}
+.tlrow:last-child{border-bottom:none}
+.tlrow .d8{flex:0 0 7.5em; font-weight:800; color:var(--ember); font-size:1.05rem; font-variant-numeric:tabular-nums}
+.tlrow.key .d8{color:var(--gold)}
+.tlrow .w{font-size:.98rem; font-weight:500}
+.tlrow .w s{color:var(--dim); font-size:.87rem; display:block; text-decoration:none; margin-top:.15rem; font-weight:400}
+@media(max-width:640px){.tlrow{flex-direction:column; gap:.25rem} .tlrow .d8{flex:none}}
 
-/* ---------- chips ---------- */
-.chips{display:flex; flex-wrap:wrap; gap:.35rem}
-.chip{border:1px solid var(--line-mid); padding:.28rem .6rem; font-size:0.85rem; color:var(--muted); background:var(--card)}
+.chips{display:flex; flex-wrap:wrap; gap:.35rem; margin:.2rem 0 .7rem}
+.chip{border:1px solid var(--line-mid); padding:.28rem .6rem; font-size:.87rem; color:var(--dim); background:var(--surf)}
 
-/* ---------- details ---------- */
-details{border:1px solid var(--line); background:var(--card); padding:0}
+details{border:1px solid var(--line); background:var(--surf)}
 details+details{margin-top:.4rem}
-summary{
-  cursor:pointer; padding:.7rem 1rem; font-weight:700; font-size:0.93rem; color:var(--teal);
-  list-style:none; display:flex; justify-content:space-between; gap:1rem; align-items:center;
-}
+summary{cursor:pointer; padding:.75rem 1rem; font-weight:700; font-size:.98rem; color:var(--ember);
+  list-style:none; display:flex; justify-content:space-between; gap:1rem; align-items:center}
 summary::-webkit-details-marker{display:none}
-summary::after{content:"+"; color:var(--gold); font-weight:800; font-size:1.1rem}
-details[open] summary::after{content:"–"}
+summary::after{content:"+"; color:var(--gold); font-weight:800; font-size:1.15rem}
+details[open] summary::after{content:"\2013"}
 details[open] summary{border-bottom:1px solid var(--line)}
-.dbody{padding:.85rem 1rem 1.1rem; font-size:0.9rem; color:var(--muted); line-height:1.8}
-.dbody p{margin:.45rem 0}
-.dbody b{color:var(--ink)}
-.dbody ul,.dbody ol{margin:.45rem 0; padding-left:1.3em}
-.dbody li{margin:.3rem 0}
+.db{padding:.85rem 1rem 1.1rem; font-size:.92rem; color:var(--dim); line-height:1.8}
+.db p{margin:.45rem 0}
+.db b{color:var(--ink); font-weight:700}
+.db ol{margin:.45rem 0; padding-left:1.3em}
+.db li{margin:.3rem 0}
 
-footer{border-top:1px solid var(--line-mid); padding-top:1rem; font-size:0.85rem; color:var(--faint)}
-a{color:var(--teal)}
+footer{margin-top:3rem; border-top:3px double var(--line-mid); padding-top:1rem; font-size:.87rem; color:var(--faint)}
+a{color:var(--ember)}
 :focus-visible{outline:2px solid var(--gold); outline-offset:2px}
 
-@media print{
-  body{background:#fff; color:#111; font-size:10.5pt}
-  .page{max-width:100%; padding:0; gap:1.4rem}
-  details{border-color:#bbb} details>.dbody{display:block !important}
-  summary::after{content:""}
-  section,.cards,.layers,.flow{break-inside:avoid}
+#s8{counter-reset:faq}
+#s8 details>summary{justify-content:flex-start; align-items:baseline}
+#s8 details>summary::after{margin-left:auto}
+#s8 details>summary::before{
+  counter-increment:faq; content:counter(faq,decimal-leading-zero);
+  color:var(--gold); font-weight:700; margin-right:.9rem; flex:0 0 auto;
+  font-variant-numeric:tabular-nums; font-size:.95em;
 }
-.layer .amt small{display:block; font-size:.85rem; letter-spacing:.12em; opacity:.75; font-weight:600}
+#s8 .db{padding-left:2.9rem}
+@media(max-width:720px){#s8 .db{padding-left:1rem}}
+
+@media print{
+  nav{display:none}
+  body{background:#fff; color:#111; font-size:10.5pt}
+  .wrap{max-width:100%; padding:0}
+  details{border-color:#bbb}
+  details>.db{display:block !important}
+  summary::after{content:""}
+  section,.grid,.layers,.flow,.saga,.tiles{break-inside:avoid}
+  h2{break-after:avoid}
+}
 </style>
 
-<div class="page">
+<nav><div class="in">
+  <a href="#s0">命名</a><a href="#s1">參賽</a><a href="#s2">主題</a><a href="#s3">交付</a><a href="#s4">勝負</a>
+  <a href="#s5">金錢</a><a href="#s6">獎勵</a><a href="#s7">時程</a><a href="#s8">常見問題</a>
+</div></nav>
+
+<div class="wrap">
 
 <header class="hero">
-  <p class="eyebrow">2026 4A 工作坊 · 全部門參加</p>
-  <h1>部門 AI 化競賽</h1>
-  <p class="bigidea">選一條<strong>最值得重生的流程</strong>，用 AI 煉成真的能跑的雛形——讓經營層親眼看見你部門的下一個樣子。</p>
-  <p class="subline">部門主管領軍 · 用 vibe coding 做 POC · 押注最高的隊伍獲勝，優勝案送進真實立案</p>
+  <p class="kicker">2026 4A 工作坊 · 全部門參加</p>
+  <p class="lockup"><span class="p">PROMETHEUS</span><span class="r">Phoenix Rising</span></p>
+  <h1>浴火鳳凰 · 部門 AI 化競賽<small>燒掉繁瑣重複的流程，煉出真的能跑的部門 AI 雛形</small></h1>
+  <p class="idea">選一條<b>最值得重生的流程</b>，用 AI 煉成真的能跑的雛形——讓經營層親眼看見你部門的下一個樣子。</p>
+  <p class="sub">部門主管領軍 · 用 No-code / Low-code 與 vibe coding 做 POC · 拿到最多鳳凰幣的隊伍獲勝，優勝案送進真實立案</p>
   <div class="tiles">
-    <div class="tile"><span class="k">開賽</span><span class="v num">8/28</span><span class="s">工作坊結束即開始</span></div>
+    <div class="tile"><span class="k">開賽</span><span class="v num">8/28</span><span class="s">工作坊結束即點火</span></div>
     <div class="tile"><span class="k">繳交</span><span class="v num">11/6</span><span class="s">簡報＋POC 繳齊</span></div>
     <div class="tile"><span class="k">決賽</span><span class="v num">11/13</span><span class="s">present + demo（暫定）</span></div>
-    <div class="tile"><span class="k">獎金</span><span class="v num">?</span><span class="s">神祕獎金 · 2027 春酒揭曉</span></div>
+    <div class="tile"><span class="k">獎金</span><span class="v num">?</span><span class="s">神祕獎金 · 2027 春酒頒獎典禮揭曉</span></div>
   </div>
 </header>
 
-<section>
-  <h2><span class="ord">01 參賽</span>全部門都要參加，主管就是負責人</h2>
-  <div class="cards c3">
-    <div class="card"><span class="tag">誰參加</span><span class="t">13 個部門</span><span class="d">全公司部級部門一律出隊，課級單位併入所屬部門。</span></div>
-    <div class="card"><span class="tag">誰負責</span><span class="t">部門主管</span><span class="d">統籌題目、分工、進度與繳交，代表部門出賽。</span></div>
-    <div class="card"><span class="tag">怎麼聯繫</span><span class="t">只找主管</span><span class="d">4A 所有通知與收件都對主管；部門內分工由主管決定。</span></div>
-  </div>
-  <p class="say"><b>人數不限</b>——一個人代表部門也可以，缺人可以跨部門借。<b>不會寫程式也能參加</b>：用 vibe coding 讓 AI 寫，工作坊會教。</p>
-  <details>
-    <summary>參賽部門完整名單</summary>
-    <div class="dbody">
-      <div class="chips">
-        <span class="chip">長照事業部</span><span class="chip">洗滌事業部</span><span class="chip">醫療業務部</span>
-        <span class="chip">代工業務部</span><span class="chip">供應鏈管理部</span><span class="chip">內部控制部</span>
-        <span class="chip">行銷部</span><span class="chip">資訊部</span><span class="chip">法務部</span>
-        <span class="chip">財務部</span><span class="chip">會計部</span><span class="chip">行政管理部</span>
-        <span class="chip">人力資源部</span>
-      </div>
-      <p>名單依 2026-06-05 生效組織圖，共 13 個部級部門。不參加的部門，請先向甜董與法務長說明並取得核准，再知會 4A。</p>
+<section id="s0">
+  <div class="saga">
+    <h3>Why Phoenix Rising</h3>
+    <div class="years">
+      <div class="yr"><span class="y num">2024</span><span class="t">點燃火種</span><span class="d">帶進 AI，讓大家開始認識、開始嘗試。</span></div>
+      <div class="yr"><span class="y num">2025</span><span class="t">AI Agent 幫幫賽</span><span class="d">工具用起來了，但還不夠聰明、不夠成形。</span></div>
+      <div class="yr now"><span class="y num">2026</span><span class="t">浴火重生</span><span class="d">火種煉成力量——舊流程燒掉，長出部門的 AI 雛形。</span></div>
     </div>
-  </details>
+    <p>4A 的 master plan 是<b>普羅米修斯計畫</b>：點燃創新、賦能轉型。今年是 <b>Phoenix Rising</b>——去年那些覺得「還不夠好用」的 AI 應用，正是它們涅槃升級的時刻。用 <b>No-code / Low-code 與 Vibe Coding</b>，燒掉過去繁瑣重複的流程，煉出一個真的可以跑、可以現場 demo 的部門 AI 雛形。</p>
+  </div>
 </section>
 
-<section>
-  <h2><span class="ord">02 主題</span>先做一條流程，講出整個部門的路</h2>
+<section id="s1">
+  <div class="head"><span class="ord num">01</span><h2><span>Entry</span>全部門都要參加，主管就是負責人</h2></div>
+  <div class="grid g3">
+    <div class="cell"><span class="tag">誰參加</span><span class="t">13 個部門</span><span class="d">全公司部級部門一律出隊，課級單位併入所屬部門。</span></div>
+    <div class="cell"><span class="tag">誰負責</span><span class="t">部門主管</span><span class="d">統籌題目、分工、進度與繳交，代表部門出賽。</span></div>
+    <div class="cell"><span class="tag">怎麼聯繫</span><span class="t">只找主管</span><span class="d">4A 所有通知與收件都對主管；部門內分工由主管決定。</span></div>
+  </div>
+  <p class="say">這場比賽比的是<b>判斷力</b>，不是程式能力——動手的工具，工作坊都教過。</p>
+  <details><summary>參賽部門完整名單</summary><div class="db">
+    <div class="chips"><span class="chip">長照事業部</span><span class="chip">洗滌事業部</span><span class="chip">醫療業務部</span><span class="chip">代工業務部</span><span class="chip">供應鏈管理部</span><span class="chip">內部控制部</span><span class="chip">行銷部</span><span class="chip">資訊部</span><span class="chip">法務部</span><span class="chip">財務部</span><span class="chip">會計部</span><span class="chip">行政管理部</span><span class="chip">人力資源部</span></div>
+    <p>名單依 2026-06-05 生效組織圖，共 13 個部級部門。不參加的部門，請先向甜董與法務長說明並取得核准，再知會 4A。</p>
+  </div></details>
+</section>
+
+<section id="s2">
+  <div class="head"><span class="ord num">02</span><h2><span>Theme</span>先燒掉一條流程，講出整個部門的路</h2></div>
   <div class="flow">
-    <div class="step"><span class="n">起點</span><span class="t">切入流程</span><span class="d">部門裡最有價值、最值得 AI 化的那一條</span></div>
-    <div class="arrow">→</div>
-    <div class="step"><span class="n">延伸</span><span class="t">接更多工作流</span><span class="d">一條做成後，把相鄰流程逐步接進來</span></div>
-    <div class="arrow">→</div>
-    <div class="step end"><span class="n">終點</span><span class="t">部門 AI 化</span><span class="d">整個部門的運作跑在 AI 上</span></div>
+    <div class="fstep"><span class="n">起火點</span><span class="t">切入流程</span><span class="d">部門裡最有價值、最值得 AI 化的那一條</span></div>
+    <div class="farrow">→</div>
+    <div class="fstep"><span class="n">延燒</span><span class="t">接更多工作流</span><span class="d">一條做成後，把相鄰流程逐步接進來</span></div>
+    <div class="farrow">→</div>
+    <div class="fstep end"><span class="n">重生</span><span class="t">部門 AI 化</span><span class="d">整個部門的運作跑在 AI 上</span></div>
   </div>
   <p class="say">部門由多個流程組成。<b>POC 只做一條</b>，但<b>簡報必須帶路線圖</b>——只做一條工作流的自動化、講不出後面的路，就還不是部門 AI 化。</p>
+
   <p class="oneline">AI 只是工具。先看見需求，再決定要不要用它。</p>
-  <div class="cards c3">
-    <div class="card"><span class="tag">先看見</span><span class="t">你部門在做什麼</span><span class="d">產品是什麼、客戶要什麼、每天卡在哪裡。這一層看不清楚，後面做什麼都是猜的。</span></div>
-    <div class="card"><span class="tag">再判斷</span><span class="t">這裡該不該用 AI</span><span class="d">看清楚需求之後，才問「這一段適不適合 AI、要用哪一種」。順序反過來，就會做出很漂亮、但沒有人要用的東西。</span></div>
-    <div class="card"><span class="tag">最後反測</span><span class="t">沒有 AI，你還能做什麼</span><span class="d">把 AI 拿掉，這個題目還成立嗎？你還能為部門做出什麼結果？答不出來，代表你抓的是工具，不是需求。</span></div>
+  <div class="grid g3">
+    <div class="cell"><span class="tag">先看見</span><span class="t">你部門在做什麼</span><span class="d">產品是什麼、客戶要什麼、每天卡在哪裡。這一層看不清楚，後面做什麼都是猜的。</span></div>
+    <div class="cell"><span class="tag">再判斷</span><span class="t">這裡該不該用 AI</span><span class="d">看清楚需求之後，才問「這一段適不適合 AI、要用哪一種」。順序反過來，就會做出很漂亮、但沒有人要用的東西。</span></div>
+    <div class="cell"><span class="tag">最後反測</span><span class="t">沒有 AI，你還能做什麼</span><span class="d">把 AI 拿掉，這個題目還成立嗎？你還能為部門做出什麼結果？答不出來，代表你抓的是工具，不是需求。</span></div>
   </div>
 </section>
 
-<section>
-  <h2><span class="ord">03 交付</span>當天交三樣東西</h2>
-  <div class="cards c3">
-    <div class="card"><span class="tag">01</span><span class="t">簡報 10 分鐘</span><span class="d">痛點 → 目標 → demo → 驗證過的效益 → 部門 AI 化路線圖＋資源請求。上台幾個人都行，時間不加。</span></div>
-    <div class="card"><span class="tag">02</span><span class="t">能跑的雛形</span><span class="d">vibe coding 做的 POC，現場實跑一條主流程。不求完整，求真的能動。</span></div>
-    <div class="card"><span class="tag">03</span><span class="t">動手前自評</span><span class="d">一張表證明五個維度都想過（工作坊提供工具）。</span></div>
+<section id="s3">
+  <div class="head"><span class="ord num">03</span><h2><span>Deliverables</span>當天交三樣東西</h2></div>
+  <div class="grid g3">
+    <div class="cell"><span class="tag">01</span><span class="t">簡報 10 分鐘</span><span class="d">痛點 → 目標 → demo → 驗證過的效益 → 部門 AI 化路線圖＋資源請求。上台幾個人都行，時間不加。</span></div>
+    <div class="cell"><span class="tag">02</span><span class="t">能跑的雛形</span><span class="d">No-code / Low-code 或 vibe coding 做的 POC，現場實跑一條主流程。不求完整，求真的能動。</span></div>
+    <div class="cell"><span class="tag">03</span><span class="t">動手前自評</span><span class="d">一張表證明五個維度都想過（工作坊提供工具）。</span></div>
   </div>
   <p class="oneline">固定的只有三件：10 分鐘、上面三樣交付物、下面三大鐵則。其餘自由發揮。</p>
   <p class="say"><b>不限制</b>：團隊人數與上台人數、簡報格式與頁數、用什麼工具做、demo 怎麼呈現、要不要交原始碼。怎麼講最有說服力，你們自己決定。</p>
-  <details>
-    <summary>三大鐵則——違反任一項即不具獲獎資格</summary>
-    <div class="dbody">
-      <ol>
-        <li><b>效益可量化</b>：換算成數字（營收增／成本降），並由<b>部門主管事前確認</b>，防止浮報。賺錢單位用營收／成本呈現；成本中心可用「降低部門年度預算／工時」呈現。</li>
-        <li><b>資料集中公司機房</b>：專案用到的資料一律集中公司管理，不散落個人雲端帳號。</li>
-        <li><b>可追蹤、非黑盒子</b>：留得下紀錄、交得了接、換人也能續用，防止「比完即廢」。不指定工具，但必須可追蹤。</li>
-      </ol>
-    </div>
-  </details>
+  <details><summary>三大鐵則——違反任一項即不具獲獎資格</summary><div class="db"><ol>
+    <li><b>效益可量化</b>：換算成數字（營收增／成本降），並由<b>部門主管事前確認</b>，防止浮報。賺錢單位用營收／成本呈現；成本中心可用「降低部門年度預算／工時」呈現。</li>
+    <li><b>資料集中公司機房</b>：專案用到的資料一律集中公司管理，不散落個人雲端帳號。</li>
+    <li><b>可追蹤、非黑盒子</b>：留得下紀錄、交得了接、換人也能續用，防止「比完即廢」。不指定工具，但必須可追蹤。</li>
+  </ol></div></details>
 </section>
 
-<section>
-  <h2><span class="ord">04 勝負</span>拿到鳳凰幣最多的隊伍獲勝</h2>
+<section id="s4">
+  <div class="head"><span class="ord num">04</span><h2><span>Verdict</span>拿到鳳凰幣最多的隊伍獲勝</h2></div>
   <div class="verdict">
-    <span class="big">拿到鳳凰幣最多 ＝ 優勝</span>
-    <span class="sub">押注可隨時調整，最後一次鎖定才結算 · 同額時五維總分高者勝，再同分由評審合議</span>
+    <span class="b">拿到鳳凰幣最多 ＝ 優勝</span>
+    <span class="s">押注可隨時調整，最後一次鎖定才結算 · 同額時五維總分高者勝，再同分由評審合議</span>
   </div>
-  <p class="say">五維判斷框架貫穿全場，角色是<b>讓老闆敢押你</b>——評審照這五維拷問、打分，決定押多少：</p>
+  <p class="say">五維判斷框架貫穿全場，角色是<b>讓老闆敢押你</b>——評審照這五維拷問、打分，決定押多少鳳凰幣：</p>
   <div class="dims">
     <div class="dim"><span class="n">01</span><span class="t">商業價值</span><span class="q">效益講得出數字嗎</span></div>
     <div class="dim"><span class="n">02</span><span class="t">技術選型</span><span class="q">該不該做成 Agent</span></div>
@@ -254,121 +264,82 @@ a{color:var(--teal)}
     <div class="dim"><span class="n">04</span><span class="t">成效驗收</span><span class="q">怎麼證明夠好</span></div>
     <div class="dim"><span class="n">05</span><span class="t">資安防護</span><span class="q">資料風險想過嗎</span></div>
   </div>
-  <details>
-    <summary>比賽當天怎麼跑（每隊 17 分鐘）</summary>
-    <div class="dbody">
-      <p><b>簡報＋demo 10 分鐘</b> → <b>評審拷問與講評 5 分鐘</b>（照五維追問，並當場說出喜歡什麼、不喜歡什麼、建議什麼）→ <b>評審押注 2 分鐘</b>。</p>
-      <p><b>講評要說出來，金額不說。</b>評審會當場給你意見，但押了多少鳳凰幣全場保密；而且評審聽完後面的隊伍還能回頭調整，所以中途的數字沒有意義。全部結束、最後鎖定後才一次揭曉。</p>
-    </div>
-  </details>
+  <details><summary>比賽當天怎麼跑（每隊 17 分鐘）</summary><div class="db">
+    <p><b>簡報＋demo 10 分鐘</b> → <b>評審拷問與講評 5 分鐘</b>（照五維追問，並當場說出喜歡什麼、不喜歡什麼、建議什麼）→ <b>評審押注 2 分鐘</b>。</p>
+    <p><b>講評要說出來，金額不說。</b>評審會當場給你意見，但<b>押了多少鳳凰幣全場保密</b>，到最後才一次揭曉——這樣後面的隊伍不會被前面的數字影響。</p>
+  </div></details>
 </section>
 
-<section>
-  <h2><span class="ord">05 金錢</span>鳳凰幣是計分，獎金是真的，立案才是重點</h2>
+<section id="s5">
+  <div class="head"><span class="ord num">05</span><h2><span>The Money</span>鳳凰幣是計分，獎金是真的，立案才是重點</h2></div>
   <div class="layers">
-    <div class="layer">
-      <span class="amt num">100 萬<br><small>鳳凰幣</small></span>
-      <span class="body"><span class="t">評審手上的競賽代幣「鳳凰幣」</span><span class="d">每位評審一筆 100 萬鳳凰幣，可拆給多隊、也可不押完。唯一作用是把「老闆願不願意買單」變成可比較的數字。</span></span>
-    </div>
-    <div class="layer real">
-      <span class="amt num">NT$?</span>
-      <span class="body"><span class="t">神祕獎金</span><span class="d">金額於 2027 年春酒頒獎典禮揭曉並頒發。發給優勝隊，隊內自行分配。winner takes all。</span></span>
-    </div>
-    <div class="layer">
-      <span class="amt">真實立案</span>
-      <span class="body"><span class="t">公司資源</span><span class="d">優勝案送進真實立案評估，可能獲得公司資源開發上線。預算與人力依正式流程另行核定。</span></span>
-    </div>
+    <div class="layer"><span class="amt num">100萬<em>鳳凰幣</em></span><span><span class="t">評審手上的競賽代幣「鳳凰幣」</span><span class="d">每位評審一筆 100 萬鳳凰幣，可拆給多隊、也可不押完。唯一作用是把「老闆願不願意買單」變成可比較的數字。</span></span></div>
+    <div class="layer real"><span class="amt num">NT$?</span><span><span class="t">神祕獎金</span><span class="d">金額於 <b>2027 年春酒頒獎典禮</b>上揭曉並頒發。發給優勝隊，隊內自行分配。winner takes all。</span></span></div>
+    <div class="layer"><span class="amt">真實立案</span><span><span class="t">公司資源</span><span class="d">優勝案送進真實立案評估，可能獲得公司資源開發上線。預算與人力依正式流程另行核定。</span></span></div>
   </div>
   <p class="oneline">鳳凰幣決定名次，不決定預算；名次決定獎勵；立案決定資源。</p>
-  <details>
-    <summary>押注怎麼算（舉例）</summary>
-    <div class="dbody">
-      <p>本屆 6 位評審、假設 4 支隊伍。每位評審各自把（最多）100 萬鳳凰幣拆給看好的隊：A 隊拿到合計 250 萬、B 隊 180 萬、C 隊 90 萬、D 隊 0 萬——<b>A 隊獲勝</b>。</p>
-      <p>全場總池＝6 × 100 萬＝<b>600 萬鳳凰幣</b>；評審可以不押完，所以各隊合計不必等於總池。</p>
-    </div>
-  </details>
+  <details><summary>鳳凰幣怎麼押、怎麼算（含隨時調整）</summary><div class="db">
+    <p><b>每位評審手上 100 萬鳳凰幣，聽完一隊就可以押，押多少扣多少、餘額即時顯示。</b>押給 A 部門 50 萬，手上就剩 50 萬。</p>
+    <p><b>押出去的可以隨時收回或改</b>——聽完後面的隊伍，覺得前面那隊不值 50 萬，回頭改掉就好。全部隊伍結束、最後鎖定前都還能調整。也<b>可以不押完</b>，押不完代表「我只買單到這裡」。</p>
+    <p>結算：本屆 6 位評審、假設 4 支隊伍，A 隊拿到合計 250 萬、B 隊 180 萬、C 隊 90 萬、D 隊 0 萬——<b>A 隊獲勝</b>。全場總池＝6 × 100 萬＝<b>600 萬鳳凰幣</b>。</p>
+  </div></details>
 </section>
 
-<section>
-  <h2><span class="ord">06 獎勵</span>贏了，帶著公司資源做自己部門的事</h2>
-  <div class="cards c2">
-    <div class="card"><span class="tag">優勝隊</span><span class="t">神祕獎金</span><span class="d">真的新台幣，金額於 2027 年春酒頒獎典禮揭曉並頒發。發給優勝隊，隊內自行分配。</span></div>
-    <div class="card"><span class="tag">優勝隊</span><span class="t">專案優先立案</span><span class="d">由提案部門主導、公司出資源——不是多做事，是帶著資源做你本來就想解決的事。</span></div>
-    <div class="card"><span class="tag">優勝隊</span><span class="t">公開表揚＋績效加註</span><span class="d">全公司公告；成員年度考核加註本案事蹟，立案成果列入次年考核參考。</span></div>
-    <div class="card"><span class="tag">所有隊伍</span><span class="t">能力與曝光帶得走</span><span class="d">vibe coding 與五維判斷是自己的；老闆帶著預算聽你講部門痛點，好案子賽後仍可能被撿走立案。</span></div>
+<section id="s6">
+  <div class="head"><span class="ord num">06</span><h2><span>Rewards</span>贏了，帶著公司資源做自己部門的事</h2></div>
+  <div class="grid g2">
+    <div class="cell"><span class="tag">優勝隊</span><span class="t">神祕獎金</span><span class="d">真的新台幣，金額於 2027 年春酒頒獎典禮揭曉並頒發。發給優勝隊，隊內自行分配。</span></div>
+    <div class="cell"><span class="tag">優勝隊</span><span class="t">專案優先立案</span><span class="d">由提案部門主導、公司出資源——不是多做事，是帶著資源做你本來就想解決的事。</span></div>
+    <div class="cell"><span class="tag">優勝隊</span><span class="t">公開表揚＋績效加註</span><span class="d">全公司公告；成員年度考核加註本案事蹟，立案成果列入次年考核參考。</span></div>
+    <div class="cell"><span class="tag">所有隊伍</span><span class="t">能力與曝光帶得走</span><span class="d">vibe coding 與五維判斷是自己的；老闆帶著預算聽你講部門痛點，好案子賽後仍可能被撿走立案。</span></div>
   </div>
 </section>
 
-<section>
-  <h2><span class="ord">07 時程</span>兩個月做一件真的能跑的東西</h2>
+<section id="s7">
+  <div class="head"><span class="ord num">07</span><h2><span>Timeline</span>兩個月煉出一件真的能跑的東西</h2></div>
   <div class="tl">
-    <div class="row key"><span class="date num">8/28（五）</span><span class="what">開賽<span class="sub">工作坊第三場結束即開始</span></span></div>
-    <div class="row"><span class="date num">9/11（五）</span><span class="what">主管回報參賽資料<span class="sub">執行團隊名單＋切入流程題目一句話</span></span></div>
-    <div class="row"><span class="date num">8/28–11/6</span><span class="what">開發期<span class="sub">約兩個月，做出能 demo 的 POC</span></span></div>
-    <div class="row key"><span class="date num">11/6（五）</span><span class="what">繳交截止<span class="sub">簡報（PPT）、POC、動手前自評全部繳齊</span></span></div>
-    <div class="row key"><span class="date num">11/13（五）</span><span class="what">決賽 present + demo<span class="sub">（暫定）當天鎖定押注、一次揭曉，宣布優勝</span></span></div>
+    <div class="tlrow key"><span class="d8 num">8/28</span><span class="w">點火開賽<s>週五 · 工作坊第三場結束即開始</s></span></div>
+    <div class="tlrow"><span class="d8 num">9/11</span><span class="w">主管回報參賽資料<s>週五 · 執行團隊名單＋切入流程題目一句話</s></span></div>
+    <div class="tlrow"><span class="d8 num">兩個月</span><span class="w">煉造期<s>8/28–11/6 · 做出能 demo 的 POC</s></span></div>
+    <div class="tlrow key"><span class="d8 num">11/6</span><span class="w">繳交截止<s>週五 · 簡報（PPT）、POC、動手前自評全部繳齊</s></span></div>
+    <div class="tlrow key"><span class="d8 num">11/13</span><span class="w">決賽 present + demo<s>週五（暫定）· 當天揭曉五維分數、鳳凰幣押注與名次，宣布優勝</s></span></div>
+    <div class="tlrow key"><span class="d8 num">2027 春酒</span><span class="w">頒獎典禮 · 神祕獎金揭曉<s>優勝隊上台領獎，獎金金額當場公布並頒發</s></span></div>
   </div>
   <p class="say">評審 6 位：<b>甜董、總裁、威總、法務長、Ricky 副總、Tino 協理</b>（押注總池 600 萬鳳凰幣）。押注優勝案鳳凰幣最多的評審，將出任該案立案後的 sponsor。</p>
 </section>
 
-<section>
-  <h2><span class="ord">08 常見問題</span>先回答你正要問的那幾題</h2>
-  <details>
-    <summary>鳳凰幣是什麼？是真的錢嗎？</summary>
-    <div class="dbody"><p>不是現金，不會發給任何人，它是<b>計分工具</b>——把「老闆願不願意買單」變成數字。真的部分在後面：優勝隊拿神祕獎金（真的新台幣，2027 春酒頒獎典禮揭曉），優勝案進入真實立案評估。</p></div>
-  </details>
-  <details>
-    <summary>100 萬鳳凰幣是每隊 100 萬，還是全部隊伍去搶？</summary>
-    <div class="dbody"><p>是<b>每位評審</b>手上 100 萬鳳凰幣，全部隊伍去爭取所有評審的押注。本屆 6 位評審＝總池 600 萬鳳凰幣，你的隊伍拿到的是所有評審<b>合計</b>押給你的數量。評審<b>可以不押完</b>——押不完代表「我只買單到這裡」，也是意見。</p></div>
-  </details>
-  <details>
-    <summary>拿到越多押注，之後就能拿到越多開發資源嗎？</summary>
-    <div class="dbody"><p>不是。押注<b>只決定名次</b>。優勝案立案時的實際預算與人力，由公司依正式流程另行核定。</p></div>
-  </details>
-  <details>
-    <summary>第一名跟拿到押注但沒得第一的隊，差別在哪？</summary>
-    <div class="dbody"><p>獎金、優先立案、公開表揚、績效加註——<b>只有第一名有</b>。其他隊伍的案子若被評審看好，賽後仍可能被立案撿走，但那是額外的好事，不是比賽獎勵。</p></div>
-  </details>
-  <details>
-    <summary>每個部門都要參加、薪水又不會加，憑什麼認真做？</summary>
-    <div class="dbody">
-      <p>上場是全體的事，認真做是自己的選擇：</p>
-      <p><b>① 既然一定要上場，就把它變成幫部門搶資源的機會</b>——你平常要排隊等的資源，比賽當天在台下等你開口；隨便做，機會就是別的部門的。</p>
-      <p><b>② 能力帶得走</b>——vibe coding 和五維判斷是你個人的 AI 能力，離開這家公司都有用。</p>
-      <p><b>③ 投入很有限</b>——目標是「一條主流程能 demo」，不是完整系統。</p>
-    </div>
-  </details>
-  <details>
-    <summary>我的題目一定要用到 AI 嗎？做得很簡單會不會被扣分？</summary>
-    <div class="dbody"><p><b>AI 只是工具，這場比賽真正在看的是你有沒有看懂自己部門的需求。</b>先看見產品與需求，再問這一段該不該用 AI；順序反過來，就會做出很炫但沒人要用的東西。</p><p>用一個問題自我檢查：<b>如果沒有 AI，你還能為部門做出什麼結果？</b>答得出來，代表你抓到的是真需求；答不出來，代表你抓的是工具，題目要重挑。</p><p>所以「做得簡單」不會扣分，<b>用了不該用的複雜做法才會</b>。</p></div>
-  </details>
-  <details>
-    <summary>「部門 AI 化」是要把整個部門做完嗎？</summary>
-    <div class="dbody"><p>不是。<b>POC 只做一個切入流程</b>（痛點常發生、效益講得出數字、兩個月做得出雛形），但<b>簡報要講路線圖</b>：這條做成後，下一步接哪些工作流、最後整個部門長什麼樣。</p></div>
-  </details>
-  <details>
-    <summary>不會寫程式可以參加嗎？輸了會怎樣？</summary>
-    <div class="dbody">
-      <p><b>不會寫程式可以。</b>vibe coding 就是用自然語言讓 AI 寫程式，工作坊會教。比的是判斷力，不是程式功力。</p>
-      <p><b>輸了不會怎樣。</b>分數評的是這次的提案，不是部門績效；參賽本身已納入部門年度紀錄。揭曉分數是為了讓「老闆買不買單」透明，不是排名羞辱。</p>
-    </div>
-  </details>
-  <details>
-    <summary>給評審：你的四個任務</summary>
-    <div class="dbody">
-      <p>你扮演的不是老師，是<b>拿自己預算出來投資的老闆</b>。</p>
-      <ol>
-        <li><b>拷問</b>：照五維追問，揭穿空殼——講不出數字的價值、反射性上 Agent、沒估過的帳單，當場問出來。</li>
-        <li><b>押注</b>：把判斷變成金額。只押你真的會買單的案子；都不想買就少押或不押。</li>
-        <li><b>盲評</b>：分數與金額寫在紙上，不與其他評審討論，不當場透露。</li>
-        <li><b>玩真的</b>：優勝案可能真的立案，押最多的評審出任該案 sponsor。押注前想一下：這個案子明天真的啟動，你願不願意當它的支持者。</li>
-      </ol>
-    </div>
-  </details>
+<section id="s8">
+  <div class="head"><span class="ord num">08</span><h2><span>FAQ</span>先回答你正要問的那幾題</h2></div>
+  <details><summary>鳳凰幣是什麼？是真的錢嗎？</summary><div class="db"><p><b>不是錢，是這場比賽專用的競賽代幣。</b>每位評審手上有 100 萬鳳凰幣，用來押給他真的願意買單的案子——它不是新台幣、不會兌換、不會發給任何人，唯一作用是把「老闆買不買單」變成可以比較的數字。</p><p>真的錢在別的地方：優勝隊拿<b>神祕獎金</b>（真的新台幣，2027 春酒頒獎典禮揭曉），優勝案進入<b>真實立案評估</b>。</p></div></details>
+  <details><summary>獎金是多少？什麼時候給？</summary><div class="db"><p><b>神祕獎金——金額保密到 2027 年春酒的頒獎典禮上才揭曉並頒發</b>，決賽當天不會公布。這場比賽從頭到尾就是「留到該揭曉的那一刻」：評審的分數與鳳凰幣押注留到決賽揭曉，獎金金額留到頒獎典禮。</p><p>可以確定的三件事：這是<b>真的新台幣</b>、<b>只有優勝隊拿得到</b>、<b>發給團隊由隊內自行分配</b>。</p></div></details>
+  <details><summary>100 萬鳳凰幣是每隊 100 萬，還是全部隊伍去搶？</summary><div class="db"><p>是<b>每位評審</b>手上 100 萬鳳凰幣，全部隊伍去爭取所有評審的押注。本屆 6 位評審＝全場總池 600 萬鳳凰幣，你的隊伍拿到的是所有評審<b>合計</b>押給你的數量。評審<b>可以不押完</b>——押不完代表「我只買單到這裡」，也是意見。</p></div></details>
+  <details><summary>拿到越多鳳凰幣，之後就能拿到越多開發資源嗎？</summary><div class="db"><p>不是。鳳凰幣<b>只決定名次</b>。優勝案立案時的實際預算與人力，由公司依正式流程另行核定。</p></div></details>
+  <details><summary>第一名跟拿到鳳凰幣但沒得第一的隊，差別在哪？</summary><div class="db"><p>神祕獎金、優先立案、公開表揚、績效加註——<b>只有第一名有</b>。其他隊伍的案子若被評審看好，賽後仍可能被立案撿走，但那是額外的好事，不是比賽獎勵。</p></div></details>
+  <details><summary>每個部門都要參加、薪水又不會加，憑什麼認真做？</summary><div class="db">
+    <p>上場是全體的事，認真做是自己的選擇：</p>
+    <p><b>① 既然一定要上場，就把它變成幫部門搶資源的機會</b>——你平常要排隊等的資源，比賽當天在台下等你開口；隨便做，機會就是別的部門的。</p>
+    <p><b>② 能力帶得走</b>——vibe coding 和五維判斷是你個人的 AI 能力，離開這家公司都有用。</p>
+    <p><b>③ 投入很有限</b>——目標是「一條主流程能 demo」，不是完整系統。</p>
+  </div></details>
+  <details><summary>我的題目一定要用到 AI 嗎？做得很簡單會不會被扣分？</summary><div class="db"><p><b>AI 只是工具，這場比賽真正在看的是你有沒有看懂自己部門的需求。</b>先看見產品與需求，再問這一段該不該用 AI；順序反過來，就會做出很炫但沒人要用的東西。</p><p>用一個問題自我檢查：<b>如果沒有 AI，你還能為部門做出什麼結果？</b>答得出來，代表你抓到的是真需求，AI 只是把它做得更快更好；答不出來，代表你抓的是工具，題目要重挑。</p><p>所以「做得簡單」不會扣分，<b>用了不該用的複雜做法才會</b>——這正是五維第二條「技術選型」在看的事。</p></div></details>
+  <details><summary>「部門 AI 化」是要把整個部門做完嗎？</summary><div class="db"><p>不是。<b>POC 只做一個切入流程</b>（痛點常發生、效益講得出數字、兩個月做得出雛形），但<b>簡報要講路線圖</b>：這條做成後，下一步接哪些工作流、最後整個部門長什麼樣。</p></div></details>
+  <details><summary>評審當場會講評嗎？會知道自己拿了多少鳳凰幣嗎？</summary><div class="db"><p><b>會講評，不會公布金額。</b>每隊拷問結束後，評審會當場說出喜歡什麼、不喜歡什麼、建議什麼——這是你當天能帶走的東西。</p><p>但<b>押了多少鳳凰幣不會公布</b>，而且評審聽完後面的隊伍還可以回頭調整，所以中途的數字沒有意義。全部隊伍結束、最後鎖定後，才一次揭曉各隊的鳳凰幣總數與名次。</p></div></details>
+  <details><summary>不會寫程式可以參加嗎？輸了會怎樣？</summary><div class="db">
+    <p><b>不會寫程式可以。</b>vibe coding 就是用自然語言讓 AI 寫程式，工作坊會教。比的是判斷力，不是程式功力。</p>
+    <p><b>輸了不會怎樣。</b>分數評的是這次的提案，不是部門績效；參賽本身已納入部門年度紀錄。揭曉分數是為了讓「老闆買不買單」透明，不是排名羞辱。</p>
+  </div></details>
+  <details><summary>給評審：你的五個任務</summary><div class="db">
+    <p>你扮演的不是老師，是<b>拿自己預算出來投資的老闆</b>。</p>
+    <ol>
+      <li><b>拷問</b>：照五維追問，揭穿空殼——講不出數字的價值、反射性上 Agent、沒估過的帳單，當場問出來。</li>
+      <li><b>講評</b>：當場說出你<b>喜歡什麼、不喜歡什麼、建議什麼</b>。這是各部門當天唯一能帶走的回饋，請講具體。</li>
+      <li><b>押注</b>：把判斷變成鳳凰幣。手上 100 萬，押多少扣多少，餘額隨時看得到。只押你真的會買單的案子；都不想買就少押或不押。</li>
+      <li><b>隨時可改</b>：聽完後面的隊伍，覺得前面押多了或押少了，<b>回頭改就好</b>，全部結束鎖定前都算數。<b>金額不用說出口、也不用寫理由</b>——理由已經在你的講評裡了。</li>
+      <li><b>玩真的</b>：優勝案可能真的立案，押最多鳳凰幣的評審出任該案 sponsor。押注前想一下：這個案子明天真的啟動，你願不願意當它的支持者。</li>
+    </ol>
+  </div></details>
 </section>
 
-<footer>
-  2026 4A 工作坊「部門 AI 化」競賽 · 規章正式版 v3（2026-08-19）· 主辦：4A 小組
-</footer>
+<footer>PROMETHEUS: PHOENIX RISING · 2026 4A 工作坊部門 AI 化競賽 · 規章 v4（2026-08-19）· 主辦：4A 小組 · 設計方案 D｜青金典雅</footer>
 
 </div>
